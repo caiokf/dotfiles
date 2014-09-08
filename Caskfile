@@ -22,3 +22,4 @@ cask install calibre 2> /dev/null
 cask install picasa 2> /dev/null
 cask install skype 2> /dev/null
 cask install alfred 2> /dev/null
+cask install evernote 2> /dev/null
