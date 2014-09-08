@@ -48,3 +48,22 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+
+# up 'n' folders
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# simple ip
+alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
+
+# lock computer
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+
+# hibernation and sleep settings
+alias hibernate='sudo pmset -a hibernatemode 25'
+alias sleep='sudo pmset -a hibernatemode 0'
+alias safesleep='sudo pmset -a hibernatemode 3'
+alias smartsleep='sudo pmset -a hibernatemode 2'
