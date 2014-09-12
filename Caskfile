@@ -24,3 +24,4 @@ cask install skype 2> /dev/null
 cask install alfred 2> /dev/null
 cask install evernote 2> /dev/null
 cask install java 2> /dev/null
+cask install karabiner 2> /dev/null
