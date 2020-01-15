@@ -45,7 +45,7 @@
 
 [core]
 
-	editor = vim
+	editor = code
 
 	excludesfile = ~/.gitignorelocal
 
