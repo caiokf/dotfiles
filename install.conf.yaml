@@ -1,0 +1,52 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    # Terminal:
+    ~/.shell:
+      path: shell
+      create: true
+    ~/.shell_env: config/shell_env
+    ~/.bash_profile: config/bash_profile
+    ~/.bashrc: config/bashrc
+    ~/.zshrc: config/zshrc
+    ~/.hushlogin: config/hushlogin
+
+    # SSH:
+    ~/.ssh/config: config/ssh_config
+
+    # Git:
+    ~/.gitconfig: config/gitconfig
+    ~/.gitignore_global: config/gitignore
+
+    # Editors:
+    ~/.editorconfig: config/editorconfig
+    ~/.nanorc: config/nanorc
+
+# Installing dependencies:
+- brewfile:
+    file: Brewfile
+    no-upgrage: true
+
+# Setting up vscode:
+- link:
+    # vscode:
+    "~/Library/Application Support/Code/User/settings.json":
+        path: vscode/settings.json
+        create: true
+    "~/Library/Application Support/Code/User/keybindings.json":
+        path: vscode/keybindings.json
+        create: true
+
+- shell:
+  - [bash ./vscode/install.sh, Installing vscode extensions]
+
+# Cleaning up:
+- shell:
+  - [brew cleanup, Cleaning up]

@@ -8,22 +8,6 @@ for file in ~/.{path,bash_prompt,aliases,functions,extra}; do
 done;
 unset file;
 
-# Prefer US English and use UTF-8
-export LANG="en_US.UTF-8";
-export LC_ALL="en_US.UTF-8";
-
-# Highlight section titles in manual pages
-export LESS_TERMCAP_md="${yellow}";
-
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X";
-
-# Always enable colored `grep` output
-export GREP_OPTIONS="--color=auto";
-
-# Link Homebrew casks in `/Applications` rather than `~/Applications`
-export HOMEBREW_CASK_OPTS="--appdir=/Applications";
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
@@ -74,8 +58,6 @@ if [ -f '/Users/caiokf/Downloads/google-cloud-sdk/path.bash.inc' ]; then source 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/caiokf/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/caiokf/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
-source ~/.bashrc
-
 nvm use v8.12.0
 # added by Anaconda3 5.3.1 installer
 # >>> conda init >>>
@@ -92,6 +74,9 @@ else
     fi
 fi
 unset __conda_setup
+
+
+
 # <<< conda init <<<
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
