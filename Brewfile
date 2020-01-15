@@ -1,64 +1,77 @@
-# Install command-line tools using Homebrew
-# Usage: `brew bundle Brewfile`
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
 
-# Make sure we’re using the latest Homebrew
-update
+brew "awscli"
+brew "bash"
+brew "blueutil"
+brew "coreutils"
+brew "ctags"
+brew "curl"
+brew "docker"
+brew "elixir"
+brew "ffmpeg"
+brew "git"
+brew "go"
+brew "gnupg"
+brew "grep"
+brew "highlight"
+brew "htop"
+brew "hub"
+brew "jq"
+brew "lazydocker"
+brew "lazygit"
+brew "markdown"
+brew "mas"
+brew "neofetch"
+brew "neovim"
+brew "nmap"
+brew "node"
+brew "nvm"
+brew "postgresql"
+brew "python"
+brew "pyenv"
+brew "ripgrep"
+brew "ruby-build"
+brew "rbenv"
+brew "redis", restart_service: true
+brew "ruby"
+brew "sed"
+brew "shellcheck"
+brew "terraform"
+brew "terraform-docs"
+brew "tldr"
+brew "tmux"
+brew "trash"
+brew "tree"
+brew "vim"
+brew "wget"
+brew "yarn"
+brew "z"
+brew "zsh"
 
-# Upgrade any already-installed formulae
-upgrade
-
-# Install GNU core utilities (those that come with OS X are outdated)
-# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-install coreutils
-# Install some other useful utilities like `sponge`
-install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-install findutils
-# Install GNU `sed`, overwriting the built-in `sed`
-install gnu-sed --default-names
-# Install Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-install bash
-install bash-completion
-
-# Install wget with IRI support
-install wget --enable-iri
-
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-install ringojs
-install narwhal
-
-# Install more recent versions of some OS X tools
-install vim --override-system-vi
-install homebrew/dupes/grep
-install homebrew/dupes/screen
-install homebrew/php/php55 --with-gmp
-
-# Install other useful binaries
-install ack
-install bfg
-#install exiv2
-install foremost
-install git
-install hashpump
-install imagemagick --with-webp
-install lynx
-install nmap
-install node # This installs `npm` too using the recommended installation method
-install p7zip
-install pigz
-install pv
-install rename
-install rhino
-install sqlmap
-install tree
-install ucspi-tcp # `tcpserver` et al.
-install webkit2png
-install xpdf
-install zopfli
-
-install homebrew/versions/lua52
-
-# Remove outdated versions from the cellar
-cleanup
+cask "alfred"
+cask "calibre"
+cask "dropbox"
+cask "evernote"
+cask "flux"
+cask "font-consolas-for-powerline"
+cask "font-fira-code"
+cask "font-inconsolata"
+cask "font-inconsolata-for-powerline"
+cask "font-roboto-mono"
+cask "font-roboto-mono-for-powerline"
+cask "google-chrome"
+cask "karabiner"
+cask "postman"
+cask "sequel-pro"
+cask "skype"
+cask "spectacle"
+cask "spotify"
+cask "the-unarchiver"
+cask "visual-studio-code"
+cask "windscribe"
+cask "zoomus"
