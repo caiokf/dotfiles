@@ -64,20 +64,48 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 eval "$(rbenv init -)"
 
-# up 'n' folders
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
+[ -s "/Users/caiokf/.dnx/dnvm/dnvm.sh" ] && . "/Users/caiokf/.dnx/dnvm/dnvm.sh" # Load dnvm
 
-# simple ip
-alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# lock computer
-alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/caiokf/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/caiokf/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
-# hibernation and sleep settings
-alias hibernate='sudo pmset -a hibernatemode 25'
-alias sleep='sudo pmset -a hibernatemode 0'
-alias safesleep='sudo pmset -a hibernatemode 3'
-alias smartsleep='sudo pmset -a hibernatemode 2'
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/caiokf/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/caiokf/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+source ~/.bashrc
+
+nvm use v8.12.0
+# added by Anaconda3 5.3.1 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/caiokf/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/caiokf/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/caiokf/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/caiokf/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/caiokf/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/caiokf/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/caiokf/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/caiokf/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
