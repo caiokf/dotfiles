@@ -1,6 +1,7 @@
 - defaults:
     link:
         relink: true
+        force: true
 
 - clean: ['~']
 
@@ -17,6 +18,7 @@
     ~/.bashrc: config/bashrc
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
+    ~/.hyper.js: config/.hyper.js
 
     # SSH:
     ~/.ssh/config: config/ssh_config
