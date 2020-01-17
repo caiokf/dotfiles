@@ -12,7 +12,7 @@
   "editor.fontSize": 14,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "selection",
+  "editor.renderWhitespace": "all",
   "editor.rulers": [
     80
   ],
@@ -31,7 +31,13 @@
     ".babelrc": "jsonc",
     ".eslintrc": "jsonc",
     "*.pyi": "python",
-    "zshrc": "shellscript"
+    "zshrc": "shellscript",
+    ".aliases": "shellscript",
+    ".exports": "shellscript",
+    ".prompt": "shellscript",
+    ".functions": "shellscript",
+    "bash_profile": "shellscript",
+    "editorconfig": "yaml"
   },
   "files.autoSave": "onFocusChange",
   "files.exclude": {
@@ -58,14 +64,14 @@
   "terminal.integrated.enableBell": true,
   "window.clickThroughInactive": false,
   "window.newWindowDimensions": "maximized",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "gitDecoration.modifiedResourceForeground": "#d4cb68",
     "activityBar.activeBorder": "#e5b358",
     "editorSuggestWidget.highlightForeground": "#e5b358",
     "editorSuggestWidget.selectedBackground": "#1c2a42",
   },
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Ayu Dark",
   "workbench.editor.labelFormat": "short",
   "workbench.iconTheme": "ayu",
   "workbench.startupEditor": "newUntitledFile",
