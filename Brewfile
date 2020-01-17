@@ -79,3 +79,8 @@ cask "visual-studio-code"
 cask "vlc"
 cask "windscribe"
 cask "zoomus"
+
+mas '1password 7', id: 1333542190
+mas 'Evernote', id: 406056744
+mas 'Clocky', id: 414554506
+mas 'GarageBand', 682658836

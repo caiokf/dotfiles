@@ -10,7 +10,12 @@ source "$HOME/.shell/.exports"
 source "$HOME/.shell/.aliases"
 source "$HOME/.shell/.functions"
 source "$HOME/.shell/.prompt"
-
+source "$HOME/.shell/node.zsh"
+source "$HOME/.shell/golang.zsh"
+source "$HOME/.shell/python.zsh"
+source "$HOME/.shell/ruby.zsh"
+source "$HOME/.shell/android.zsh"
+source "$HOME/.shell/git.zsh"
 
 # === Local variables and overrides ===
 

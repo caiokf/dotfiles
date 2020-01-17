@@ -1,4 +1,6 @@
 
+#!/bin/zsh
+
 # Show OS info when opening a new terminal
 neofetch
 
