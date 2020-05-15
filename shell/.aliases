@@ -4,7 +4,6 @@
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
-
 #----------------------------------------------------------
 # Work
 #----------------------------------------------------------
@@ -14,6 +13,7 @@ alias rtc="cd ~/development/toptal/run-the-call/rtc_web"
 alias clinova="cd ~/development/clinova"
 alias scribe="cd ~/development/toptal/scribevo/scribe-app"
 alias indebted="cd ~/development/indebted"
+alias flex="cd ~/development/flex"
 
 alias v="aws-vault exec --debug --assume-role-ttl=1h"
 alias m="make"

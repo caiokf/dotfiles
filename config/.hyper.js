@@ -27,7 +27,7 @@ module.exports = {
 		foregroundColor: '#fff',
 
 		// terminal background color
-		backgroundColor: 'rgba(0, 0, 0, 0.7)',
+		backgroundColor: 'rgba(0, 0, 0, 1)',
 
 		// selection color
 		selectionColor: 'rgba(102, 102, 102, 0.3)',
@@ -36,7 +36,74 @@ module.exports = {
 		borderColor: '#fff',
 
 		// custom css to embed in the main window
-		css: '',
+		css: `
+			.header_header {
+				background: linear-gradient(to bottom, #F3F3F3 0%, #D3D3D3 100%);
+			}
+			.tabs_nav {
+
+			}
+			.tabs_nav .tabs_borderShim {
+				display: none;
+			}
+			.tabs_list {
+				margin-left: 0 !important;
+			}
+			.tabs_nav .tabs_title {
+				border-left-color: transparent !important;
+				border-right-color: transparent !important;
+				height: 34px !important;
+			}
+			.terms_terms {
+				margin-top: calc(34px * 2) !important;
+			}
+			.tabs_nav .tabs_title,
+			.tabs_nav .tab_tab {
+				color: #000 !important;
+				border-top: 1px solid !important;
+				border-bottom: 1px solid !important;
+				border-color: #A0A0A0 !important;
+			}
+			.tabs_nav .tab_first {
+				border-left-width: 0 !important;
+				padding-left: 1px;
+			}
+			.tabs_nav .tabs_tab:last-of-type {
+				border-right-color: transparent !important;
+			}
+			.tabs_nav .tab_tab:not(.tab_active) {
+				color: #888 !important;
+				background-color: rgba(0,0,0,0.9) !important;
+			}
+			.tabs_nav .tab_tab:not(.tab_active):hover {
+				background-color: #B2B2B2 !important;
+			}
+			.tabs_nav .tab_tab:not(.tab_active):hover {
+				color: #333 !important;
+			}
+			.tabs_nav .tabs_title,
+			.tabs_nav .tabs_list .tab_active {
+				border-top-color: #BDBDBD !important;
+				background-color: #D3D3D3;
+			}
+			.tabs_nav .tabs_list .tab_icon {
+				right: auto;
+				left: 7px;
+				z-index: 2;
+				color: #6C6C6C;
+				border-radius: 2px;
+				background-color: transparent;
+			}
+			.tabs_nav .tabs_list .tab_icon:hover {
+				background-color: rgba(0, 0, 0, 0.075);
+			}
+			.tabs_nav .tabs_list .tab_icon svg {
+				width: 8px;
+				height: 8px;
+				top: 3px;
+				left: 3px;
+			}
+		`,
 
 		// custom css to embed in the terminal window
 		termCSS: '',
@@ -88,7 +155,7 @@ module.exports = {
 		env: {},
 
 		// set to false for no bell
-		bell: 'SOUND',
+		bell: 'false',
 
 		// if true, selected text will automatically be copied to the clipboard
 		copyOnSelect: false,

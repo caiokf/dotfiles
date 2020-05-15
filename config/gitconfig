@@ -34,7 +34,7 @@
 	whitespace = fix # Detect whitespace errors when applying a patch
 
 [core]
-	editor = code
+	editor = vim
 	excludesfile = ~/.gitignorelocal
 
 [color]
