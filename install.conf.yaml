@@ -29,7 +29,6 @@
 
     # Editors:
     ~/.editorconfig: config/editorconfig
-    ~/.nanorc: config/nanorc
 
 # Installing dependencies:
 - brewfile:
