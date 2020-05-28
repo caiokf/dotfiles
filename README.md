@@ -1,6 +1,6 @@
 # caiokf's dotfiles
 
-![caiokf's dotfiles](https://raw.githubusercontent.com/caiokf/dotfiles/master/media/iterm2.png)
+![caiokf's dotfiles](https://raw.githubusercontent.com/caiokf/dotfiles/master/media/prompt.png)
 
 ## Contents
 
