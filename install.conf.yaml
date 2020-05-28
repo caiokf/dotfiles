@@ -48,6 +48,10 @@
 - shell:
   - [bash ./vscode/install.sh, Installing vscode extensions]
 
+# Setting up node/npm
+- shell:
+  - [bash ./node/install.sh, Installing vscode extensions]
+
 # Cleaning up:
 - shell:
   - [brew cleanup, Cleaning up]
