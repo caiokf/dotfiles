@@ -8,6 +8,7 @@
 
 source "$HOME/.shell/.exports"
 source "$HOME/.shell/.aliases"
+source "$HOME/.shell/.env_config"
 source "$HOME/.shell/.functions"
 source "$HOME/.shell/.prompt"
 source "$HOME/.shell/node.zsh"

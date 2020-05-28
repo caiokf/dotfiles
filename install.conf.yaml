@@ -35,6 +35,10 @@
     file: Brewfile
     no-upgrage: true
 
+# Setting up asdf
+- shell:
+  - [bash ./asdf/install.sh, Seeting up asdf]
+
 # Setting up vscode:
 - link:
     # vscode:
