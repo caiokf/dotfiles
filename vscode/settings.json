@@ -8,6 +8,7 @@
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
   "editor.folding": true,
+  "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.glyphMargin": true,
@@ -100,5 +101,6 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.tabSize": 2,
 }
