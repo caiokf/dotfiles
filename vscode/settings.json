@@ -38,7 +38,11 @@
     ".prompt": "shellscript",
     ".functions": "shellscript",
     "bash_profile": "shellscript",
-    "editorconfig": "yaml"
+    "editorconfig": "yaml",
+    "Fastfile": "ruby",
+    "Deliverfile": "ruby",
+    "Appfile": "ruby",
+    "Matchfile": "ruby"
   },
   "files.autoSave": "onFocusChange",
   "files.exclude": {
@@ -103,4 +107,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "gitlens.mode.active": "zen",
 }
