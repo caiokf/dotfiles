@@ -18,8 +18,8 @@ alias dotfiles="cd ~/development/dotfiles"
 
 alias v="aws-vault exec --debug --assume-role-ttl=1h"
 alias m="make"
-alias make="mmake"
 alias run='docker-compose run --rm dev mmake'
+alias fl='bundle exec fastlane'
 
 #----------------------------------------------------------
 # Easier navigation: .., ..., ...., ....., ~ and -

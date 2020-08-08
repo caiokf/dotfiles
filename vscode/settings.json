@@ -108,5 +108,4 @@
   },
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "gitlens.mode.active": "zen",
 }
