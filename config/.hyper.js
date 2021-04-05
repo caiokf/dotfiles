@@ -33,77 +33,7 @@ module.exports = {
     selectionColor: "rgba(102, 102, 102, 0.3)",
 
     // border color (window, tabs)
-    borderColor: "#fff",
-
-    // custom css to embed in the main window
-    css: `
-			.header_header {
-				background: linear-gradient(to bottom, #F3F3F3 0%, #D3D3D3 100%);
-			}
-			.tabs_nav {
-
-			}
-			.tabs_nav .tabs_borderShim {
-
-			}
-			.tabs_list {
-				margin-left: 0 !important;
-			}
-			.tabs_nav .tabs_title {
-				border-left-color: transparent !important;
-				border-right-color: transparent !important;
-				height: 34px !important;
-			}
-			.terms_terms {
-				margin-top: calc(34px * 2) !important;
-			}
-			.tabs_nav .tabs_title,
-			.tabs_nav .tab_tab {
-				color: #000 !important;
-				border-top: 1px solid !important;
-				border-bottom: 1px solid !important;
-				border-color: #A0A0A0 !important;
-			}
-			.tabs_nav .tab_first {
-				border-left-width: 0 !important;
-				padding-left: 1px;
-			}
-			.tabs_nav .tabs_tab:last-of-type {
-				border-right-color: transparent !important;
-			}
-			.tabs_nav .tab_tab:not(.tab_active) {
-				color: #888 !important;
-				background-color: rgba(0,0,0,0.9) !important;
-			}
-			.tabs_nav .tab_tab:not(.tab_active):hover {
-				background-color: #B2B2B2 !important;
-			}
-			.tabs_nav .tab_tab:not(.tab_active):hover {
-				color: #333 !important;
-			}
-			.tabs_nav .tabs_title,
-			.tabs_nav .tabs_list .tab_active {
-				border-top-color: #BDBDBD !important;
-				background-color: #D3D3D3;
-			}
-			.tabs_nav .tabs_list .tab_icon {
-				right: auto;
-				left: 7px;
-				z-index: 2;
-				color: #6C6C6C;
-				border-radius: 2px;
-				background-color: transparent;
-			}
-			.tabs_nav .tabs_list .tab_icon:hover {
-				background-color: rgba(0, 0, 0, 0.075);
-			}
-			.tabs_nav .tabs_list .tab_icon svg {
-				width: 8px;
-				height: 8px;
-				top: 3px;
-				left: 3px;
-			}
-		`,
+    borderColor: "#000",
 
     // custom css to embed in the terminal window
     termCSS: "",
@@ -115,11 +45,12 @@ module.exports = {
     // set to `false` if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` on windows and Linux (ignored on macOS)
-    showWindowControls: "",
+    showWindowControls: "true",
 
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: "12px 14px",
 
+    minimal: "false",
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
@@ -183,13 +114,7 @@ module.exports = {
   },
 
   // a list of plugins to fetch and install from npm
-  plugins: [
-    "hyper-tabs-enhanced",
-    "hyperminimal",
-    "hyperterm-summon",
-    "hypercwd",
-    "hyper-opacity",
-  ],
+  plugins: ["hyperterm-summon", "hypercwd", "hyper-opacity"],
 
   hyperTabs: {
     trafficButtons: true,

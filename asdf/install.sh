@@ -22,3 +22,5 @@ asdf plugin-add 1password https://github.com/samtgarson/asdf-1password
 asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git
 
 asdf plugin-add python
+
+asdf plugin-add direnv

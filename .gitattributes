@@ -1,0 +1,1 @@
+config/aws_credentials filter=git-crypt diff=git-crypt
