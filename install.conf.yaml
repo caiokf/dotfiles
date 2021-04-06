@@ -20,10 +20,20 @@
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
     ~/.hyper.js: config/.hyper.js
-    ~/.tool-versions: config/.tool-versions
-
     ~/.zsh/functions/_git: shell/git-completion.zsh
     ~/.zsh/functions/git-completion.bash: shell/git-completion.bash
+
+    # asdf
+    ~/.tool-versions: development/tool-versions
+    ~/development/flex/.tool-versions: development/tool-versions_flex
+
+    # Direnv
+    ~/development/.envrc: development/envrc
+    ~/development/flex/.envrc: development/envrc_flex
+
+    # AWS Config
+    ~/.aws/config: config/aws_config
+    ~/.aws/credentials: config/aws_credentials
 
     # SSH:
     ~/.ssh/config: config/ssh_config
