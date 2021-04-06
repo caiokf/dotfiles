@@ -8,6 +8,7 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [mkdir ~/.zsh ~/.zsh/functions]
+    - [mkdir ~/.aws]
 
 - link:
     # Terminal:
@@ -20,8 +21,6 @@
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
     ~/.hyper.js: config/.hyper.js
-    ~/.zsh/functions/_git: shell/git-completion.zsh
-    ~/.zsh/functions/git-completion.bash: shell/git-completion.bash
 
     # asdf
     ~/.tool-versions: development/tool-versions
@@ -47,7 +46,7 @@
 
 # Setting up asdf
 - shell:
-    - [bash ./asdf/install.sh, Seeting up asdf]
+    - [bash ./asdf/install.sh, Setting up asdf]
 
 # Installing dependencies:
 - brewfile:
