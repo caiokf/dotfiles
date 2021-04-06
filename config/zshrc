@@ -17,7 +17,6 @@ export ZSH="$HOME/.oh-my-zsh"
 source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.shell_env"
 
-zstyle ':completion:*:*:git:*' script ~/.zsh/functions/_git
 # `compinit` scans $fpath, so do this before calling it.
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
