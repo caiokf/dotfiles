@@ -1,11 +1,17 @@
-[orangegigs]
-region=us-east-1
+[profile orangegigs]
+region="us-east-1"
 
-[flex-development]
-region=us-east-1
+[profile flex-development]
+region="us-east-1"
 
-[flex-prod]
-region=us-east-1
+[profile flex-prod]
+region="us-east-1"
+
+[profile flex-sandbox]
+region="ap-southeast-2"
+
+[profile flex-pulumi]
+region="us-east-1"
 
 [profile iam]
 region="ap-southeast-2"
