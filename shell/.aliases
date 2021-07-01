@@ -8,10 +8,11 @@ alias sudo='sudo '
 # Work
 #----------------------------------------------------------
 alias dev="cd ~/development"
-alias dotfiles="cd ~/development/dotfiles"
+alias dotfiles="cd ~/development/dotfiles && code ."
+alias evento="cd ~/development/evento && code ."
 alias flex="cd ~/development/flex"
-alias genoa="cd ~/development/flex/genoa/genoa"
-alias welli="cd ~/development/flex/genoa/wellington/src/webapp"
+alias genoa="cd ~/development/flex/genoa/genoa && code ."
+alias welli="cd ~/development/flex/genoa/wellington/src/webapp && code ."
 alias fireside="cd ~/development/fireside/fireside-app"
 alias indebted="cd ~/development/indebted"
 alias toptal="cd ~/development/toptal"
