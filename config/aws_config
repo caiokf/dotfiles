@@ -10,7 +10,7 @@ region="us-east-1"
 [profile flex-sandbox]
 region="ap-southeast-2"
 
-[profile flex-pulumi]
+[profile flex-dev-caio-pulumi]
 region="us-east-1"
 
 [profile iam]
