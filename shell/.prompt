@@ -42,12 +42,12 @@ POWERLEVEL9K_CUSTOM_AWS_VAULT_TOKEN_FOREGROUND="black"
 function zsh_current_aws_flex_env() {
 	if [ "${AWS_PROFILE}" = "flex-prod" ]; then
 		echo "PROD"
-	fi
-  if [ "${AWS_PROFILE}" = "flex-development" ]; then
+  elif [ "${AWS_PROFILE}" = "flex-development" ]; then
 		echo "DEV"
-	fi
-  if [ "${AWS_PROFILE}" = "flex-dev-caio-pulumi]" ]; then
+  elif [ "${AWS_PROFILE}" = "flex-dev-caio-pulumi" ]; then
 		echo "flex-pulumi"
+  else
+    echo "${AWS_PROFILE}"
 	fi
 }
 
