@@ -3,7 +3,7 @@
       relink: true
       force: true
 
-- clean: ["~"]
+- clean: ['~']
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
@@ -23,16 +23,20 @@
     ~/.hyper.js: config/.hyper.js
 
     # asdf
-    ~/.tool-versions: development/tool-versions
-    ~/development/flex/.tool-versions: development/tool-versions_flex
+    ~/.default-npm-packages: development/asdf-default-npm-packages
+    ~/.tool-versions: development/asdf-tool-versions
 
     # Direnv
     ~/development/.envrc: development/envrc
-    ~/development/flex/.envrc: development/envrc_flex
+
+    # Flex-specific config
+    ~/development/flex/.tool-versions: development/flex/asdf-tool-versions
+    ~/development/flex/.envrc: development/flex/envrc
 
     # AWS Config
     ~/.aws/config: config/aws_config
     ~/.aws/credentials: config/aws_credentials
+    ~/.aws/functions: config/aws_functions
 
     # SSH:
     ~/.ssh/config: config/ssh_config
@@ -56,10 +60,10 @@
 # Setting up vscode:
 - link:
     # vscode:
-    "~/Library/Application Support/Code/User/settings.json":
+    '~/Library/Application Support/Code/User/settings.json':
       path: vscode/settings.json
       create: true
-    "~/Library/Application Support/Code/User/keybindings.json":
+    '~/Library/Application Support/Code/User/keybindings.json':
       path: vscode/keybindings.json
       create: true
 
