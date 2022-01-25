@@ -1,2 +1,2 @@
 config/aws_credentials filter=git-crypt diff=git-crypt
-development/envrc_flex filter=git-crypt diff=git-crypt
+development/flex/envrc filter=git-crypt diff=git-crypt
