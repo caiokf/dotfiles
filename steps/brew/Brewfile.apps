@@ -1,8 +1,0 @@
-# GUI Applications
-
-cask "ghostty"                     # Fast, native terminal (replaces Hyper)
-cask "raycast"                     # Launcher + window manager (replaces Alfred + Spectacle)
-cask "google-chrome"
-cask "firefox"
-cask "visual-studio-code"
-cask "slack"
