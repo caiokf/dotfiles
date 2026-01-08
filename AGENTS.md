@@ -6,6 +6,7 @@
 - Each commit should be atomic and independently revertable
 - Write clear commit messages explaining the "why", not just the "what"
 - Group related changes together, but separate unrelated changes into different commits
+- Commit messages should be all lowercase
 
 ## Secrets
 

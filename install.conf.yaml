@@ -7,7 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/starship ~/.config/mise ~/.config/ghostty]
+    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/starship ~/.config/mise ~/.config/ghostty ~/.config/git]
 
 - link:
     # Terminal:
@@ -35,9 +35,9 @@
     # SSH:
     ~/.ssh/config: config/ssh_config
 
-    # Git:
-    ~/.gitconfig: config/gitconfig
-    ~/.gitignore_global: config/gitignore
+    # Git (XDG compliant: ~/.config/git/)
+    ~/.config/git/config: config/git/config
+    ~/.config/git/ignore: config/git/ignore
 
     # Editors:
     ~/.editorconfig: config/editorconfig
