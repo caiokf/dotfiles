@@ -1,5 +1,5 @@
 # Load shell configuration
-source ~/.shell_env
+source ~/.config/shell/init
 
 # Initialize mise (version manager)
 if command -v mise &>/dev/null; then

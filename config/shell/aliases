@@ -115,6 +115,8 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 # Git shortcuts (supplement oh-my-zsh git plugin)
 #----------------------------------------------------------
 alias g="git"
+alias gti="git"  # typo fix
+alias gi="git"   # typo fix
 alias gs="git status -s"
 alias gd="git diff"
 alias gds="git diff --staged"

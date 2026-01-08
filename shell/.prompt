@@ -1,8 +1,0 @@
-# Shell prompt configuration
-# Using Starship prompt (https://starship.rs)
-
-# Set config location
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-
-# Initialize Starship
-eval "$(starship init zsh)"
