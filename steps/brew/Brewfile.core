@@ -5,6 +5,8 @@ brew "zsh"
 brew "bash"
 brew "starship"                    # Cross-shell prompt
 brew "tmux"
+brew "atuin"                       # Better shell history with sync
+brew "zsh-autosuggestions"         # Fish-like autosuggestions
 
 # Core utilities
 brew "coreutils"                   # GNU core utilities

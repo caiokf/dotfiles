@@ -27,6 +27,10 @@ ENABLE_CORRECTION="true"
 eval "$(zoxide init zsh)"           # Smart cd
 eval "$(mise activate zsh)"         # Version manager
 eval "$(fzf --zsh)"                 # Fuzzy finder keybindings
+eval "$(atuin init zsh)"            # Better shell history with Ctrl+R
+
+# Autosuggestions (ghost text from history)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Optional integrations (uncomment if installed)
 # Google Cloud SDK
