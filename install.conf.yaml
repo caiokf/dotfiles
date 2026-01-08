@@ -26,13 +26,9 @@
     # Starship prompt
     ~/.config/starship/starship.toml: config/starship/starship.toml
 
-    # mise (version manager, replaces asdf)
-    # mise uses ~/.config/mise/ by default, no symlinks needed
-    # Just run: mise use node@lts python@3.12 etc.
-
-    # Legacy asdf support (remove once fully migrated to mise)
-    ~/.default-npm-packages: development/asdf-default-npm-packages
-    ~/.tool-versions: development/asdf-tool-versions
+    # mise (version manager)
+    # Config at ~/.config/mise/config.toml (created on first use)
+    # Usage: mise use node@lts python@3.12 ruby@3.3
 
     # Direnv
     ~/development/.envrc: development/envrc
