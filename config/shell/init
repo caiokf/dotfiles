@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# Shell initialization - sources all shell config files
+
+SHELL_DIR="$HOME/.config/shell"
+
+source "$SHELL_DIR/exports"
+source "$SHELL_DIR/aliases"
+source "$SHELL_DIR/env_config"
+source "$SHELL_DIR/functions"
+
+# Local overrides (not in git)
+[[ -f "$HOME/.shell_local" ]] && source "$HOME/.shell_local"

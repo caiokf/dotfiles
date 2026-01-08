@@ -7,18 +7,26 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/starship ~/.config/mise ~/.config/ghostty ~/.config/git]
+    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/shell ~/.config/ssh ~/.config/starship ~/.config/mise ~/.config/ghostty ~/.config/git]
 
 - link:
-    # Terminal:
-    ~/.shell:
-      path: shell
-      create: true
-    ~/.shell_env: config/shell_env
-    ~/.bash_profile: config/bash_profile
-    ~/.bashrc: config/bashrc
-    ~/.zshrc: config/zshrc
+    # Shell (XDG: ~/.config/shell/)
+    ~/.config/shell/init: config/shell/init
+    ~/.config/shell/aliases: config/shell/aliases
+    ~/.config/shell/exports: config/shell/exports
+    ~/.config/shell/functions: config/shell/functions
+    ~/.config/shell/env_config: config/shell/env_config
+    ~/.zshrc: config/shell/zshrc
+    ~/.bash_profile: config/shell/bash_profile
+    ~/.bashrc: config/shell/bashrc
     ~/.hushlogin: config/hushlogin
+
+    # SSH (XDG: ~/.config/ssh/ - but ~/.ssh is standard)
+    ~/.ssh/config: config/ssh/config
+
+    # Git (XDG: ~/.config/git/)
+    ~/.config/git/config: config/git/config
+    ~/.config/git/ignore: config/git/ignore
 
     # Ghostty terminal
     ~/.config/ghostty/config: config/ghostty/config
@@ -32,26 +40,17 @@
     # Direnv
     ~/development/.envrc: development/envrc
 
-    # SSH:
-    ~/.ssh/config: config/ssh_config
-
-    # Git (XDG compliant: ~/.config/git/)
-    ~/.config/git/config: config/git/config
-    ~/.config/git/ignore: config/git/ignore
-
-    # Editors:
+    # Editors
     ~/.editorconfig: config/editorconfig
 
 # Editors: VS Code and Cursor (shared config)
 - link:
-    # VS Code
     '~/Library/Application Support/Code/User/settings.json':
       path: config/vscode/settings.json
       create: true
     '~/Library/Application Support/Code/User/keybindings.json':
       path: config/vscode/keybindings.json
       create: true
-    # Cursor (same config as VS Code)
     '~/Library/Application Support/Cursor/User/settings.json':
       path: config/vscode/settings.json
       create: true
