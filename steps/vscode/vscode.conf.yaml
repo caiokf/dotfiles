@@ -3,7 +3,7 @@
       command: |
         if command -v code &> /dev/null; then
           while read -r ext; do
-            [ -n "$ext" ] && code --install-extension "$ext" --force
+            [[ -n "$ext" && ! "$ext" =~ ^# ]] && code --install-extension "$ext" --force
           done < steps/vscode/extensions.txt
         fi
       stdout: true
@@ -13,7 +13,7 @@
       command: |
         if command -v cursor &> /dev/null; then
           while read -r ext; do
-            [ -n "$ext" ] && cursor --install-extension "$ext" --force
+            [[ -n "$ext" && ! "$ext" =~ ^# ]] && cursor --install-extension "$ext" --force
           done < steps/vscode/extensions.txt
         fi
       stdout: true
