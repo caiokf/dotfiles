@@ -1,4 +1,12 @@
-Host *
-  UseKeychain yes
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# Comment this line if you don't want it to be added again.
+Include ~/.orbstack/ssh/config
+
+Host bitbucket.org
+AddKeysToAgent yes
+IdentityFile ~/.ssh/caiokf-plt_bitbucket_ed25519
+
+Host github.com
+AddKeysToAgent yes
+IdentityFile ~/.ssh/caiokf_gh_ed25519
