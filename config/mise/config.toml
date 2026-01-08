@@ -2,7 +2,7 @@
 # Docs: https://mise.jdx.dev/configuration.html
 
 [tools]                      # Global tool versions - these are available everywhere
-node = "lts"
+node = "22"
 python = "3.12"
 ruby = "3.3"
 go = "latest"
@@ -16,9 +16,3 @@ always_keep_download = false # Always keep the latest version installed
 auto_install = true          # Automatically install missing tools when entering a directory
 verbose = false              # Use verbose output
 legacy_version_file = true   # Legacy version file support (.nvmrc, .ruby-version, etc.)
-
-[alias.node.versions]
-lts = "22"
-
-[alias.python.versions]
-default = "3.12"
