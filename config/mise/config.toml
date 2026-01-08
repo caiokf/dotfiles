@@ -3,6 +3,7 @@
 
 [tools]                      # Global tool versions - these are available everywhere
 node = "22"
+pnpm = "latest"
 python = "3.12"
 ruby = "3.3"
 go = "latest"
