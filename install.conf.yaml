@@ -7,7 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/starship]
+    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/starship ~/.config/mise ~/.config/ghostty]
 
 - link:
     # Terminal:
@@ -27,8 +27,7 @@
     ~/.config/starship/starship.toml: config/starship/starship.toml
 
     # mise (version manager)
-    # Config at ~/.config/mise/config.toml (created on first use)
-    # Usage: mise use node@lts python@3.12 ruby@3.3
+    ~/.config/mise/config.toml: config/mise/config.toml
 
     # Direnv
     ~/development/.envrc: development/envrc

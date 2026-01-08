@@ -1,0 +1,33 @@
+# mise global configuration
+# Docs: https://mise.jdx.dev/configuration.html
+
+[tools]
+# Global tool versions - these are available everywhere
+node = "lts"
+python = "3.12"
+ruby = "3.3"
+# go = "latest"
+# rust = "latest"
+
+[settings]
+# Always keep the latest version installed
+always_keep_download = false
+
+# Automatically install missing tools when entering a directory
+auto_install = true
+
+# Use verbose output
+verbose = false
+
+# Legacy version file support (.nvmrc, .ruby-version, etc.)
+legacy_version_file = true
+
+# Use asdf-compatible shims (helps with IDE support)
+# shims_dir = "~/.local/share/mise/shims"
+
+[alias.node]
+# Create aliases for node versions
+lts = "22"
+
+[alias.python]
+default = "3.12"
