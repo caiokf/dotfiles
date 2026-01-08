@@ -22,3 +22,6 @@ Thumbs.db
 # AWS credentials (manage outside dotfiles)
 config/aws_*
 .aws/
+
+TODO.md
+
