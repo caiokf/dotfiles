@@ -1,7 +1,7 @@
 # Development tools
 
 # Version management
-brew "mise"                        # Fast polyglot version manager (replaces asdf)
+brew "mise"
 
 # Containers
 brew "docker"
