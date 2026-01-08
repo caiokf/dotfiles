@@ -8,32 +8,13 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo 'Configuring your mac. Hang tight.'
-osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'tell application "System Settings" to quit' 2>/dev/null || true
 
 
 # === General ===
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
-
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=%01
-
-# Menu bar: disable transparency
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
-
-# Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-	defaults write "${domain}" dontAutoLoad -array \
-		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-		"/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Scrollbars visible when scrolling:
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
@@ -54,11 +35,8 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # === Dock ===
 
-# Show indicator lights for open apps in Dock:
+# Show indicator lights for open apps in Dock
 defaults write com.apple.dock show-process-indicators -bool true
-
-# Dock size and location:
-defaults write com.apple.Dock size-immutable -bool yes
 
 # Show Dock instantly:
 defaults write com.apple.dock autohide-delay -float 0
@@ -86,9 +64,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
-
-# Allow text selection in Quick Look
-defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -143,9 +118,9 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # === The End ===
 
 
-# Restarting apps:
+# Restarting apps
 echo 'Restarting apps...'
-killall Finder
-killall Dock
+killall Finder 2>/dev/null || true
+killall Dock 2>/dev/null || true
 
 echo 'Done!'
