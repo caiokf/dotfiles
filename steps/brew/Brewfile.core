@@ -28,6 +28,7 @@ brew "fastfetch"                   # System info (replaces neofetch)
 brew "grep"
 brew "gnu-sed"                     # GNU sed (as gsed)
 brew "gawk"
+brew "yq"                          # jq for YAML/TOML
 
 # Git and version control
 brew "git"
@@ -40,6 +41,7 @@ brew "gnupg"
 
 # Networking
 brew "nmap"
+brew "httpie"                      # Better curl for APIs
 
 # Compression
 brew "zstd"
@@ -47,3 +49,5 @@ brew "xz"
 
 # Misc
 brew "tldr"                        # Simplified man pages
+brew "glow"                        # Render markdown in terminal
+brew "tokei"                       # Code statistics
