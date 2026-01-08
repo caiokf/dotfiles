@@ -3,7 +3,8 @@
 # Shell and prompt
 brew "zsh"
 brew "bash"
-brew "starship"                    # Cross-shell prompt (replaces P10k)
+brew "starship"                    # Cross-shell prompt
+brew "tmux"
 
 # Core utilities
 brew "coreutils"                   # GNU core utilities
