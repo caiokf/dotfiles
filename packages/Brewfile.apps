@@ -1,45 +1,8 @@
 # GUI Applications
 
-# Terminal
 cask "ghostty"                     # Fast, native terminal (replaces Hyper)
-# cask "wezterm"                   # Alternative: multiplexer built-in
-
-# Productivity
 cask "raycast"                     # Launcher + window manager (replaces Alfred + Spectacle)
-# cask "rectangle"                 # Alternative: just window management
-
-# Browsers
 cask "google-chrome"
 cask "firefox"
-
-# Development
 cask "visual-studio-code"
-cask "postman"
-cask "tableplus"                   # Database client (replaces Sequel Pro)
-cask "docker"
-
-# Communication
 cask "slack"
-cask "zoom"                        # Updated from zoomus
-# cask "discord"
-
-# Media
-cask "spotify"
-cask "vlc"
-
-# Utilities
-cask "the-unarchiver"
-cask "karabiner-elements"          # Keyboard customization
-
-# Cloud storage
-cask "dropbox"
-
-# Reading
-cask "calibre"
-
-# VPN
-# cask "windscribe"
-
-# Notes (pick one)
-# cask "obsidian"
-# cask "notion"

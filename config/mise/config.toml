@@ -7,6 +7,9 @@ python = "3.12"
 ruby = "3.3"
 go = "latest"
 rust = "latest"
+terraform = "latest"
+awscli = "latest"
+pulumi = "latest"
 
 [settings]
 always_keep_download = false # Always keep the latest version installed
@@ -14,8 +17,8 @@ auto_install = true          # Automatically install missing tools when entering
 verbose = false              # Use verbose output
 legacy_version_file = true   # Legacy version file support (.nvmrc, .ruby-version, etc.)
 
-[alias.node]
+[alias.node.versions]
 lts = "22"
 
-[alias.python]
+[alias.python.versions]
 default = "3.12"
