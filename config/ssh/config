@@ -1,12 +1,9 @@
-# Added by OrbStack: 'orb' SSH host for Linux machines
-# This only works if it's at the top of ssh_config (before any Host blocks).
-# Comment this line if you don't want it to be added again.
-Include ~/.orbstack/ssh/config
+# SSH config - shared across machines
+# Machine-specific keys go in ~/.ssh/config.local (not in git)
 
-Host bitbucket.org
-AddKeysToAgent yes
-IdentityFile ~/.ssh/caiokf-plt_bitbucket_ed25519
+Include ~/.ssh/config.local
 
-Host github.com
-AddKeysToAgent yes
-IdentityFile ~/.ssh/caiokf_gh_ed25519
+# Common settings for all hosts
+Host *
+    AddKeysToAgent yes
+    IdentitiesOnly yes

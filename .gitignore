@@ -23,5 +23,8 @@ Thumbs.db
 config/aws_*
 .aws/
 
+# Machine-specific SSH config
+config/ssh/config.local
+
 TODO.md
 
