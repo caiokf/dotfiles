@@ -20,6 +20,9 @@
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
 
+    # Ghostty terminal
+    ~/.config/ghostty/config: config/ghostty/config
+
     # Starship prompt
     ~/.config/starship/starship.toml: config/starship/starship.toml
 

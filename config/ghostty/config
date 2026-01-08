@@ -1,0 +1,66 @@
+# Ghostty Terminal Configuration
+# Docs: https://ghostty.org/docs/config
+
+# Font settings
+font-family = "Hack Nerd Font"
+font-size = 16
+
+# Alternative fonts (uncomment to use)
+# font-family = "JetBrainsMono Nerd Font"
+# font-family = "FiraCode Nerd Font"
+
+# Window appearance
+background-opacity = 0.95
+window-padding-x = 10
+window-padding-y = 10
+window-decoration = true
+
+# Theme - dark minimal
+background = #1a1a1a
+foreground = #ffffff
+cursor-color = #ffffff
+selection-background = #444444
+selection-foreground = #ffffff
+
+# Color palette (One Dark inspired)
+palette = 0=#1a1a1a
+palette = 1=#e06c75
+palette = 2=#98c379
+palette = 3=#e5c07b
+palette = 4=#61afef
+palette = 5=#c678dd
+palette = 6=#56b6c2
+palette = 7=#abb2bf
+palette = 8=#5c6370
+palette = 9=#e06c75
+palette = 10=#98c379
+palette = 11=#e5c07b
+palette = 12=#61afef
+palette = 13=#c678dd
+palette = 14=#56b6c2
+palette = 15=#ffffff
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = false
+
+# Scrollback
+scrollback-limit = 10000
+
+# Shell
+command = /bin/zsh --login
+
+# Mouse
+mouse-hide-while-typing = true
+copy-on-select = true
+
+# Keybindings (macOS style)
+keybind = super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
+keybind = super+k=clear_screen
+keybind = super+w=close_surface
+keybind = super+n=new_window
+keybind = super+t=new_tab
+
+# Performance
+# gtk-single-instance = true

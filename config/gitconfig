@@ -2,21 +2,29 @@
 	name = "Caio Kinzel Filho"
 	email = caiokf@gmail.com
 
+[init]
+	defaultBranch = main
+
 [alias]
+	# Status
 	st = status
 	s = status -s
+
+	# Commit
 	ci = commit
 	co = checkout
 	amend = commit --amend --no-edit
-	prom = pull --rebase origin master
+
+	# Pull/Push
+	prom = pull --rebase origin main
+	prum = pull --rebase upstream main
+
+	# Logging
 	ls = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
-
 	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
-	# Show the diff between the latest commit and the current state
+	# Diff
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
 	# Commit all changes
@@ -30,16 +38,22 @@
 	branches = branch -a
 	remotes = remote -v
 
-[apply]
-	whitespace = fix # Detect whitespace errors when applying a patch
+	# Undo last commit (keep changes staged)
+	undo = reset --soft HEAD~1
+
+	# Stash shortcuts
+	sl = stash list
+	sp = stash pop
+	ss = stash save
 
 [core]
 	editor = vim
-	excludesfile = ~/.gitignorelocal
+	excludesfile = ~/.gitignore_global
+	pager = delta
+	autocrlf = input
+	whitespace = fix
 
 [color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
 
 [color "branch"]
@@ -49,32 +63,52 @@
 
 [color "diff"]
 	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+	frag = magenta bold
+	old = red
+	new = green
 
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
 
+[delta]
+	navigate = true
+	dark = true
+	line-numbers = true
+	side-by-side = false
+	syntax-theme = OneHalfDark
+
 [diff]
-	# Detect copies as well as renames
 	renames = copies
+	colorMoved = default
+	algorithm = histogram
+
+[fetch]
+	prune = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[merge]
+	log = true
+	conflictStyle = zdiff3
+
+[pull]
+	rebase = true
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[rebase]
+	autoStash = true
 
 [credential]
 	helper = osxkeychain
 
 [help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
-
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-
-[push]
-	default = simple
+	autocorrect = prompt
 
 [url "git@github.com:"]
 	insteadOf = "gh:"
@@ -91,3 +125,7 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+
+# Include local config for machine-specific settings
+[include]
+	path = ~/.gitconfig_local
