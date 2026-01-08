@@ -1,67 +1,79 @@
 [
-	{
-		"key": "alt+left",
-		"command": "workbench.action.navigateBack"
-	},
-	{
-		"key": "ctrl+-",
-		"command": "-workbench.action.navigateBack"
-	},
-	{
-		"key": "alt+right",
-		"command": "workbench.action.navigateForward"
-	},
-	{
-		"key": "ctrl+shift+-",
-		"command": "-workbench.action.navigateForward"
-	},
-	{
-		"key": "cmd+,",
-		"command": "workbench.action.openSettingsJson"
-	},
-	{
-		"key": "cmd+,",
-		"command": "-workbench.action.openSettings"
-	},
-	{
-		"key": "shift+cmd+up",
-		"command": "-list.collapseAll",
-		"when": "listFocus && !inputFocus"
-	},
-	{
-		"key": "alt+cmd+up",
-		"command": "-editor.action.insertCursorAbove",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "alt+cmd+down",
-		"command": "-editor.action.insertCursorBelow",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "shift+cmd+up",
-		"command": "editor.action.insertCursorAbove"
-	},
-	{
-		"key": "shift+cmd+down",
-		"command": "editor.action.insertCursorBelow"
-	},
-	{
-		"key": "cmd+j",
-		"command": "-workbench.action.togglePanel"
-	},
-	{
-		"key": "cmd+j",
-		"command": "-workbench.action.togglePanel"
-	},
-	{
-		"key": "cmd+j",
-		"command": "editor.action.joinLines",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+j",
-		"command": "-editor.action.joinLines",
-		"when": "editorTextFocus && !editorReadonly"
-	}
+  {
+    "key": "alt+left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "cmd+,",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "cmd+,",
+    "command": "-workbench.action.openSettings"
+  },
+  {
+    "key": "shift+cmd+up",
+    "command": "-list.collapseAll",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "alt+cmd+up",
+    "command": "-editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+down",
+    "command": "-editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+up",
+    "command": "editor.action.insertCursorAbove"
+  },
+  {
+    "key": "shift+cmd+down",
+    "command": "editor.action.insertCursorBelow"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+j",
+    "command": "editor.action.joinLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-editor.action.joinLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+  }
 ]
