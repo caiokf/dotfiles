@@ -42,14 +42,22 @@
     # Editors:
     ~/.editorconfig: config/editorconfig
 
-# Setting up vscode:
+# Editors: VS Code and Cursor (shared config)
 - link:
+    # VS Code
     '~/Library/Application Support/Code/User/settings.json':
-      path: vscode/settings.json
+      path: config/vscode/settings.json
       create: true
     '~/Library/Application Support/Code/User/keybindings.json':
-      path: vscode/keybindings.json
+      path: config/vscode/keybindings.json
+      create: true
+    # Cursor (same config as VS Code)
+    '~/Library/Application Support/Cursor/User/settings.json':
+      path: config/vscode/settings.json
+      create: true
+    '~/Library/Application Support/Cursor/User/keybindings.json':
+      path: config/vscode/keybindings.json
       create: true
 
 - shell:
-    - [bash ./vscode/install.sh, Installing vscode extensions]
+    - [bash ./config/vscode/install.sh, Installing vscode/cursor extensions]
