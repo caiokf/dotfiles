@@ -1,6 +1,13 @@
 # Development tools
 
 brew "mise"
+brew "direnv"
+
+# Agents
+brew "beads"
+brew "claude-code"
+brew "codex"
+brew "gemini-cli"
 
 # Containers
 brew "docker"
