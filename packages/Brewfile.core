@@ -23,7 +23,7 @@ brew "fastfetch"                   # System info (replaces neofetch)
 
 # Text processing
 brew "grep"
-brew "sed"
+brew "gnu-sed"                     # GNU sed (as gsed)
 brew "gawk"
 
 # Git and version control
