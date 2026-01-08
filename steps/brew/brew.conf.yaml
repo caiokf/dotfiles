@@ -1,0 +1,30 @@
+- shell:
+    - description: Install Homebrew if not present
+      command: |
+        if ! command -v brew &> /dev/null; then
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          eval "$(/opt/homebrew/bin/brew shellenv)"
+        fi
+      stdin: true
+      stdout: true
+      stderr: true
+
+    - description: Install core packages
+      command: brew bundle --file=steps/brew/Brewfile.core
+      stdout: true
+      stderr: true
+
+    - description: Install dev packages
+      command: brew bundle --file=steps/brew/Brewfile.dev
+      stdout: true
+      stderr: true
+
+    - description: Install apps
+      command: brew bundle --file=steps/brew/Brewfile.apps
+      stdout: true
+      stderr: true
+
+    - description: Install fonts
+      command: brew bundle --file=steps/brew/Brewfile.fonts
+      stdout: true
+      stderr: true

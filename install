@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
-
 set -e
 
-CONFIG="install.conf.yaml"
 DOTBOT_DIR=".dotbot"
-
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -12,4 +9,54 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# Available steps
+STEPS=(link brew vscode macos)
+
+run_step() {
+    local step="$1"
+    local config="steps/${step}/${step}.conf.yaml"
+
+    if [ -f "$config" ]; then
+        echo "==> Running step: $step"
+        "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "$config"
+    else
+        echo "Error: Unknown step '$step'"
+        echo "Available steps: ${STEPS[*]}"
+        exit 1
+    fi
+}
+
+show_help() {
+    cat <<EOF
+Usage: ./install [step...]
+
+Run dotfiles installation steps.
+
+Steps:
+    link    Symlink dotfiles to home directory
+    brew    Install Homebrew packages
+    vscode  Install VS Code/Cursor extensions
+    macos   Apply macOS system defaults
+
+Examples:
+    ./install           # Run all steps
+    ./install link      # Run only link step
+    ./install link brew # Run link and brew steps
+
+EOF
+}
+
+# Handle arguments
+if [ $# -eq 0 ]; then
+    # No arguments: run all steps
+    for step in "${STEPS[@]}"; do
+        run_step "$step"
+    done
+elif [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "help" ]; then
+    show_help
+else
+    # Run specified steps
+    for step in "$@"; do
+        run_step "$step"
+    done
+fi

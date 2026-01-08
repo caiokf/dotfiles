@@ -1,43 +1,94 @@
-# caiokf's dotfiles
+# dotfiles
 
-## Contents
+Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 
-What's in there?
+## Structure
 
-- my `brew` dependencies including: applications, fonts, etc. See [`Brewfile`](https://github.com/caiokf/dotfiles/blob/master/Brewfile)
-- my `macOS` configuration. See [`macos`](https://github.com/caiokf/dotfiles/blob/master/macos)
-- all my [shell configuration]. See [`shell/`](https://github.com/caiokf/dotfiles/tree/master/shell) and [`config/zshrc`](https://github.com/caiokf/dotfiles/blob/master/config/zshrc)
-- all my `vscode` configuration. See [`vscode/`](https://github.com/caiokf/dotfiles/tree/master/vscode)
+```
+dotfiles/
+├── config/                 # Dotfiles to be symlinked
+│   ├── shell/              # Shell configuration (zsh, bash)
+│   ├── git/                # Git config and global ignore
+│   ├── ssh/                # SSH config
+│   ├── vscode/             # VS Code / Cursor settings
+│   ├── ghostty/            # Ghostty terminal config
+│   ├── starship/           # Starship prompt config
+│   ├── mise/               # mise version manager config
+│   └── editorconfig        # Editor config
+├── steps/                  # Modular installation steps
+│   ├── link/               # Symlink dotfiles
+│   ├── brew/               # Homebrew packages
+│   ├── vscode/             # VS Code/Cursor extensions
+│   └── macos/              # macOS system defaults
+└── install                 # Main entry point
+```
 
 ## Installation
 
-I am using [`dotbot`](https://github.com/anishathalye/dotbot/)
-to set things up. Steps:
+```bash
+git clone https://github.com/caiokf/dotfiles ~/development/dotfiles
+cd ~/development/dotfiles
+./install
+```
 
-1. Clone this repo
-2. `cd` into `dotfiles/` folder
-3. Run: `./install`
+### Run specific steps
 
-## CLI
+```bash
+./install link          # Symlink dotfiles only
+./install brew          # Install Homebrew packages only
+./install vscode        # Install VS Code/Cursor extensions only
+./install macos         # Apply macOS defaults only
+./install link brew     # Run multiple steps
+```
 
-I am using `zsh` with [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh)
-as a main shell.
+## Steps
 
-## Apps
+### link
 
-I am using `brew` to install all free apps for my mac.
-I also sync apps from AppStore with `brew`,
-so the resulting [`Brewfile`](https://github.com/caiokf/dotfiles/blob/master/Brewfile) should contain everything.
+Symlinks all config files to their destinations, for example:
 
-## Local configuration
+- `~/.zshrc`, `~/.bash_profile` - Shell configs
+- `~/.config/shell/` - Shell init, aliases, exports, functions
+- `~/.config/git/` - Git config and ignore
+- `~/.ssh/config` - SSH config
+- `~/.config/ghostty/` - Terminal config
+- `~/.config/starship/` - Prompt config
+- `~/.config/mise/` - Version manager config
+- `~/Library/Application Support/Code/User/` - VS Code settings
+- `~/Library/Application Support/Cursor/User/` - Cursor settings (shared with VS Code)
 
-Some of the used tools requires local configuration. Such as `git` with username and email.
+### brew
 
-Here's the full list:
+Installs Homebrew packages from modular Brewfiles:
 
-1. `~/.gitconfig_local` to store any user-specific data
-2. `~/.shell_env_local` to store local shell config, like: usernames, passwords, tokens and so on
+- `Brewfile.core` - Essential CLI tools (git, fzf, ripgrep, bat, eza, etc.)
+- `Brewfile.dev` - Development tools (mise, docker, vim, neovim, etc.)
+- `Brewfile.apps` - GUI applications (Ghostty, Raycast, VS Code, etc.)
+- `Brewfile.fonts` - Nerd Fonts
+
+### vscode
+
+Installs VS Code and Cursor extensions from `extensions.txt`.
+
+### macos
+
+Applies macOS system defaults (Dock, Finder, keyboard settings, etc.).
+
+## Tools
+
+- **Shell**: zsh + [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+- **Prompt**: [Starship](https://starship.rs/)
+- **Version Manager**: [mise](https://mise.jdx.dev/) (node, python, ruby, go, rust, terraform, awscli, pulumi)
+- **Terminal**: [Ghostty](https://ghostty.org/)
+
+## Local Configuration
+
+Machine-specific configs (not tracked in git):
+
+- `~/.ssh/config.local` - SSH keys and hosts
+- `~/.config/git/config.local` - Git user settings (included by main config)
+- `~/.shell_local` - Shell environment variables, tokens, etc.
 
 ## License
 
-[WTFPL](https://en.wikipedia.org/wiki/WTFPL): do the fuck you want. Enjoy!
+[WTFPL](https://en.wikipedia.org/wiki/WTFPL)
