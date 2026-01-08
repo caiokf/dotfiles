@@ -1,0 +1,36 @@
+# Development tools
+
+# Version management
+brew "mise"                        # Fast polyglot version manager (replaces asdf)
+
+# Containers
+brew "docker"
+brew "lazydocker"                  # Docker TUI
+brew "docker-compose"
+
+# Editors
+brew "vim"
+brew "neovim"
+
+# Infrastructure
+brew "terraform"
+brew "terraform-docs"
+brew "awscli"
+
+# Code quality
+brew "shellcheck"                  # Shell script linter
+brew "ctags"
+
+# Databases
+brew "postgresql@16"
+brew "redis"
+
+# Build tools
+brew "cmake"
+brew "make"
+
+# Language-specific (uncomment as needed)
+# brew "go"
+# brew "rust"
+# brew "python@3.12"
+# brew "node@20"
