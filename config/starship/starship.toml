@@ -1,0 +1,127 @@
+# Starship prompt configuration
+# Replaces Powerlevel10k with cross-shell compatibility
+# Docs: https://starship.rs/config/
+
+# General settings
+add_newline = true
+command_timeout = 1000
+
+# Prompt format - similar to P10k multi-line layout
+format = """
+[╭─](cyan)$username$hostname$directory$git_branch$git_status$git_state
+[╰─](cyan)$character"""
+
+right_format = """$nodejs$python$ruby$rust$golang$aws$cmd_duration$time"""
+
+# Character (prompt symbol)
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+# Directory
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold white"
+truncation_length = 3
+truncate_to_repo = true
+read_only = " 🔒"
+
+# Git branch
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = " "
+style = "bold green"
+
+# Git status
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold yellow"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "\\$"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»"
+deleted = "✘"
+
+# Git state (rebasing, merging, etc.)
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bold yellow"
+
+# Username (shown in SSH or when root)
+[username]
+format = "[$user]($style) "
+style_user = "bold white"
+style_root = "bold red"
+show_always = false
+
+# Hostname (shown in SSH)
+[hostname]
+format = "[@$hostname]($style) "
+style = "bold yellow"
+ssh_only = true
+
+# Command duration
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bold yellow"
+min_time = 2_000
+show_milliseconds = false
+
+# Time
+[time]
+format = "[$time]($style) "
+style = "white"
+disabled = false
+time_format = "%H:%M"
+
+# Node.js
+[nodejs]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold green"
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+# Python
+[python]
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+symbol = " "
+style = "bold blue"
+
+# Ruby
+[ruby]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold red"
+
+# Rust
+[rust]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold orange"
+
+# Go
+[golang]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold cyan"
+
+# AWS
+[aws]
+format = '[$symbol($profile)(\($region\))]($style) '
+symbol = "☁️ "
+style = "bold yellow"
+disabled = false
+
+# Disabled modules (for performance)
+[package]
+disabled = true
+
+[docker_context]
+disabled = true

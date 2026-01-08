@@ -7,7 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [mkdir -p ~/.zsh ~/.zsh/functions]
+    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/starship]
 
 - link:
     # Terminal:
@@ -19,9 +19,15 @@
     ~/.bashrc: config/bashrc
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
-    ~/.hyper.js: config/.hyper.js
 
-    # asdf
+    # Starship prompt
+    ~/.config/starship/starship.toml: config/starship/starship.toml
+
+    # mise (version manager, replaces asdf)
+    # mise uses ~/.config/mise/ by default, no symlinks needed
+    # Just run: mise use node@lts python@3.12 etc.
+
+    # Legacy asdf support (remove once fully migrated to mise)
     ~/.default-npm-packages: development/asdf-default-npm-packages
     ~/.tool-versions: development/asdf-tool-versions
 
@@ -38,18 +44,8 @@
     # Editors:
     ~/.editorconfig: config/editorconfig
 
-# Setting up asdf
-- shell:
-    - [bash ./asdf/install.sh, Setting up asdf]
-
-# # Installing dependencies:
-# - brewfile:
-#     file: Brewfile
-#     no-upgrage: true
-
 # Setting up vscode:
 - link:
-    # vscode:
     '~/Library/Application Support/Code/User/settings.json':
       path: vscode/settings.json
       create: true
