@@ -9,22 +9,15 @@ alias sudo='sudo '
 #----------------------------------------------------------
 alias dev="cd ~/development"
 alias dotfiles="cd ~/development/dotfiles && code ."
-alias evento="cd ~/development/evento && code ."
-alias flex="cd ~/development/flex"
-alias genoa="cd ~/development/flex/genoa/genoa && code ."
-alias welli="cd ~/development/flex/genoa/wellington/src/webapp && code ."
-alias fireside="cd ~/development/fireside/fireside-app"
-alias indebted="cd ~/development/indebted"
-alias toptal="cd ~/development/toptal"
-alias rtc="cd ~/development/toptal/run-the-call/rtc_web"
-alias clinova="cd ~/development/clinova"
-alias scribe="cd ~/development/toptal/scribevo/scribe-app"
+alias plt="cd ~/development/plt"
+alias orange="cd ~/development/orangegigs"
 
-alias v="aws-vault exec --debug --assume-role-ttl=1h"
+# alias v="aws-vault exec --debug --assume-role-ttl=1h"  # Uncomment if using AWS
 alias m="make"
 alias run='docker-compose run --rm dev mmake'
 alias fl='bundle exec fastlane'
 
+alias cc="ENABLE_BACKGROUND_TASKS=1 claude --dangerously-skip-permissions"
 #----------------------------------------------------------
 # Easier navigation: .., ..., ...., ....., ~ and -
 #----------------------------------------------------------

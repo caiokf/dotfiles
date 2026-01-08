@@ -14,3 +14,11 @@ Thumbs.db
 .Trashes
 
 /development/flex
+
+# IDE/Editor specific
+.vscode/
+.idea/
+
+# AWS credentials (manage outside dotfiles)
+config/aws_*
+.aws/
