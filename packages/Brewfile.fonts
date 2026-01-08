@@ -8,5 +8,3 @@ cask "font-hack-nerd-font"
 # Additional options
 cask "font-meslo-lg-nerd-font"
 cask "font-roboto-mono-nerd-font"
-# cask "font-cascadia-code-nerd-font"
-# cask "font-victor-mono-nerd-font"

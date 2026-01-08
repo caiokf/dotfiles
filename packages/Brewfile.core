@@ -1,6 +1,6 @@
 # Core CLI tools - essential utilities
 
-# Modern shell and prompt
+# Shell and prompt
 brew "zsh"
 brew "bash"
 brew "starship"                    # Cross-shell prompt (replaces P10k)
@@ -43,5 +43,4 @@ brew "zstd"
 brew "xz"
 
 # Misc
-brew "mas"                         # Mac App Store CLI
 brew "tldr"                        # Simplified man pages
