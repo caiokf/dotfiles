@@ -4,16 +4,21 @@
 # Font settings
 font-family = "Hack Nerd Font"
 font-size = 16
+font-feature = liga
+font-feature = calt
 
 # Alternative fonts (uncomment to use)
 # font-family = "JetBrainsMono Nerd Font"
 # font-family = "FiraCode Nerd Font"
 
 # Window appearance
-background-opacity = 0.95
+background-opacity = 0.92
+background-blur-radius = 20
 window-padding-x = 10
 window-padding-y = 10
 window-decoration = true
+macos-titlebar-style = tabs
+window-theme = ghostty
 
 # Theme - dark minimal
 background = #1a1a1a
@@ -53,6 +58,9 @@ command = /bin/zsh --login
 # Mouse
 mouse-hide-while-typing = true
 copy-on-select = true
+
+# Links - Cmd+click to open URLs
+link-url = true
 
 # Keybindings (macOS style)
 keybind = super+c=copy_to_clipboard
