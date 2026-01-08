@@ -19,11 +19,6 @@
       stdout: true
       stderr: true
 
-    - description: Install apps
-      command: brew bundle --file=steps/brew/Brewfile.apps
-      stdout: true
-      stderr: true
-
     - description: Install fonts
       command: brew bundle --file=steps/brew/Brewfile.fonts
       stdout: true
