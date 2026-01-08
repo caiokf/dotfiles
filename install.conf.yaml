@@ -17,7 +17,6 @@
     ~/.config/shell/functions: config/shell/functions
     ~/.zshrc: config/shell/zshrc
     ~/.bash_profile: config/shell/bash_profile
-    ~/.hushlogin: config/hushlogin
 
     # SSH
     ~/.ssh/config: config/ssh/config
