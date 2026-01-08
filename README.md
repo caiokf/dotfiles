@@ -1,7 +1,5 @@
 # caiokf's dotfiles
 
-![caiokf's dotfiles](https://raw.githubusercontent.com/caiokf/dotfiles/master/media/prompt.png)
-
 ## Contents
 
 What's in there?
