@@ -24,6 +24,9 @@ brew "neovim"
 brew "shellcheck"                  # Shell script linter
 brew "ctags"
 
+# Infrastructure
+brew "steampipe"
+
 # Build tools
 brew "cmake"
 brew "make"
