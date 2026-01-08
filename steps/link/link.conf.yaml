@@ -6,7 +6,7 @@
 - clean: ['~']
 
 - shell:
-    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/starship ~/.config/mise ~/.config/ghostty ~/.claude ~/development]
+    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.claude ~/development]
 
 - link:
     # Shell (XDG: ~/.config/shell/)
@@ -28,7 +28,7 @@
     ~/.config/ghostty/config: config/ghostty/config
 
     # Starship prompt
-    ~/.config/starship/starship.toml: config/starship/starship.toml
+    ~/.config/starship.toml: config/starship/starship.toml
 
     # mise (version manager)
     ~/.config/mise/config.toml: config/mise/config.toml
