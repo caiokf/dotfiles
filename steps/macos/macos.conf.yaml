@@ -1,0 +1,6 @@
+- shell:
+    - description: Apply macOS defaults
+      command: bash steps/macos/macos.sh
+      stdin: true
+      stdout: true
+      stderr: true

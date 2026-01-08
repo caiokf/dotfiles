@@ -6,8 +6,7 @@
 - clean: ['~']
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [mkdir -p ~/.zsh ~/.zsh/functions ~/.config/shell ~/.config/ssh ~/.config/starship ~/.config/mise ~/.config/ghostty ~/.config/git]
+    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/starship ~/.config/mise ~/.config/ghostty ~/development]
 
 - link:
     # Shell (XDG: ~/.config/shell/)
@@ -20,7 +19,6 @@
 
     # SSH
     ~/.ssh/config: config/ssh/config
-    ~/.ssh/config.local: config/ssh/config.local
 
     # Git (XDG: ~/.config/git/)
     ~/.config/git/config: config/git/config
@@ -41,20 +39,16 @@
     # Editors
     ~/.editorconfig: config/editorconfig
 
-# Editors: VS Code and Cursor (shared config)
-- link:
-    '~/Library/Application Support/Code/User/settings.json':
+    # VS Code and Cursor (shared config)
+    ~/Library/Application Support/Code/User/settings.json:
       path: config/vscode/settings.json
       create: true
-    '~/Library/Application Support/Code/User/keybindings.json':
+    ~/Library/Application Support/Code/User/keybindings.json:
       path: config/vscode/keybindings.json
       create: true
-    '~/Library/Application Support/Cursor/User/settings.json':
+    ~/Library/Application Support/Cursor/User/settings.json:
       path: config/vscode/settings.json
       create: true
-    '~/Library/Application Support/Cursor/User/keybindings.json':
+    ~/Library/Application Support/Cursor/User/keybindings.json:
       path: config/vscode/keybindings.json
       create: true
-
-- shell:
-    - [bash ./config/vscode/install.sh, Installing vscode/cursor extensions]

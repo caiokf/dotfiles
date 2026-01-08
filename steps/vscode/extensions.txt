@@ -1,0 +1,10 @@
+4ops.terraform
+christian-kohler.path-intellisense
+eamodio.gitlens
+EditorConfig.EditorConfig
+esbenp.prettier-vscode
+ms-azuretools.vscode-docker
+ms-python.python
+redhat.vscode-yaml
+shardulm94.trailing-spaces
+teabyii.ayu
