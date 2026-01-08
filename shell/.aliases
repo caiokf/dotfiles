@@ -1,163 +1,123 @@
 #----------------------------------------------------------
 # ALIASES
 
-# Enable aliases to be sudo’ed
+# Enable aliases to be sudo'ed
 alias sudo='sudo '
 
 #----------------------------------------------------------
-# Work
+# Work directories
 #----------------------------------------------------------
 alias dev="cd ~/development"
 alias dotfiles="cd ~/development/dotfiles && code ."
 alias plt="cd ~/development/plt"
 alias orange="cd ~/development/orangegigs"
 
-# alias v="aws-vault exec --debug --assume-role-ttl=1h"  # Uncomment if using AWS
 alias m="make"
 alias run='docker-compose run --rm dev mmake'
 alias fl='bundle exec fastlane'
-
 alias cc="ENABLE_BACKGROUND_TASKS=1 claude --dangerously-skip-permissions"
+
 #----------------------------------------------------------
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Navigation
 #----------------------------------------------------------
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
+alias ~="cd ~"
 alias -- -="cd -"
 
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 
 #----------------------------------------------------------
-# ls related
+# Modern CLI replacements
 #----------------------------------------------------------
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
+# eza (modern ls replacement)
+if command -v eza &> /dev/null; then
+    alias ls="eza"
+    alias l="eza -l --icons --git"
+    alias la="eza -la --icons --git"
+    alias lt="eza -T --icons --git-ignore"  # tree view
+    alias ll="eza -l --icons --git --sort=modified"
+else
+    # Fallback to standard ls
+    alias l="ls -lF"
+    alias la="ls -laF"
 fi
 
-# List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+# bat (modern cat replacement)
+if command -v bat &> /dev/null; then
+    alias cat="bat --paging=never"
+    alias catp="bat"  # with paging
+fi
 
-# List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
-alias lc='colorls -lA --sd'
-
-# List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+# fd (modern find replacement)
+# No alias needed, just use 'fd' directly
 
 #----------------------------------------------------------
-# Network related
+# Network
 #----------------------------------------------------------
-
-# IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-
 #----------------------------------------------------------
-# Mac OSX related
+# macOS
 #----------------------------------------------------------
-
-# Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+# Update everything
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
 
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+# Volume
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
+# Empty trash
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
-# Show/hide hidden files in Finder
+# Show/hide hidden files
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Hide/show all desktop icons (useful when presenting)
+# Desktop icons
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-# Lock the screen (when going AFK)
+# Lock screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Enable Spotlight
+# Spotlight
 alias spoton="sudo mdutil -a -i on"
-
-# Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
 
-
 #----------------------------------------------------------
-# Unsorted
+# Utilities
 #----------------------------------------------------------
-
 alias h="history"
-
-# Get week number
 alias week='date +%V'
-
-# Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias c="tr -d '\n' | pbcopy"
+alias reload="exec $SHELL -l"
 
-# Canonical hex dump; some systems have this symlinked
+# Canonical hex dump
 command -v hd > /dev/null || alias hd="hexdump -C"
 
-# OS X has no `md5sum`, so use `md5` as a fallback
+# macOS fallbacks
 command -v md5sum > /dev/null || alias md5sum="md5"
-
-# OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-# JavaScriptCore REPL
-jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
-
-# URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-
-# Merge PDF files
-# Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
-alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
-
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
-done
-
-# Make Grunt print stack traces by default
-command -v grunt > /dev/null && alias grunt="grunt --stack"
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
+#----------------------------------------------------------
+# Git shortcuts (supplement oh-my-zsh git plugin)
+#----------------------------------------------------------
+alias g="git"
+alias gs="git status -s"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gl="git log --oneline -20"
+alias gp="git push"
+alias gpl="git pull"
