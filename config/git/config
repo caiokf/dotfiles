@@ -48,7 +48,7 @@
 
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/ignore
 	pager = delta
 	autocrlf = input
 	whitespace = fix
@@ -128,4 +128,4 @@
 
 # Include local config for machine-specific settings
 [include]
-	path = ~/.gitconfig_local
+	path = ~/.config/git/config.local
