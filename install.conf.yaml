@@ -19,8 +19,9 @@
     ~/.bash_profile: config/shell/bash_profile
     ~/.hushlogin: config/hushlogin
 
-    # SSH (XDG: ~/.config/ssh/ - but ~/.ssh is standard)
+    # SSH
     ~/.ssh/config: config/ssh/config
+    ~/.ssh/config.local: config/ssh/config.local
 
     # Git (XDG: ~/.config/git/)
     ~/.config/git/config: config/git/config
