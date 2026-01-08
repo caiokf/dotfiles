@@ -1,0 +1,47 @@
+# Core CLI tools - essential utilities
+
+# Modern shell and prompt
+brew "zsh"
+brew "bash"
+brew "starship"                    # Cross-shell prompt (replaces P10k)
+
+# Core utilities
+brew "coreutils"                   # GNU core utilities
+brew "curl"
+brew "wget"
+brew "tree"
+brew "trash"                       # Safe rm alternative
+brew "jq"                          # JSON processing
+brew "ripgrep"                     # Fast grep (rg)
+brew "fd"                          # Fast find alternative
+brew "bat"                         # Better cat with syntax highlighting
+brew "eza"                         # Modern ls replacement (fork of exa)
+brew "zoxide"                      # Smarter cd command
+brew "fzf"                         # Fuzzy finder
+brew "htop"                        # Process viewer
+brew "fastfetch"                   # System info (replaces neofetch)
+
+# Text processing
+brew "grep"
+brew "sed"
+brew "gawk"
+
+# Git and version control
+brew "git"
+brew "gh"                          # GitHub CLI (replaces hub)
+brew "git-delta"                   # Better git diffs
+brew "lazygit"                     # Git TUI
+
+# Security
+brew "gnupg"
+
+# Networking
+brew "nmap"
+
+# Compression
+brew "zstd"
+brew "xz"
+
+# Misc
+brew "mas"                         # Mac App Store CLI
+brew "tldr"                        # Simplified man pages

@@ -1,78 +1,94 @@
-tap "getantibody/tap"
-tap "homebrew/cask"
+# Main Brewfile - includes all package categories
+#
+# Usage:
+#   brew bundle                     # Install everything
+#   brew bundle --file=packages/Brewfile.core   # Install only core tools
+#   brew bundle --file=packages/Brewfile.dev    # Install only dev tools
+#   brew bundle --file=packages/Brewfile.apps   # Install only apps
+#   brew bundle --file=packages/Brewfile.fonts  # Install only fonts
+
+# Taps
+tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 
-brew "asdf"
-brew "awscli"
+# Include modular Brewfiles
+# Note: `brew bundle` doesn't support includes, so we list everything here
+# The separate files exist for selective installation
+
+# === Core CLI Tools ===
+brew "zsh"
 brew "bash"
-brew "blueutil"
+brew "starship"
 brew "coreutils"
-brew "ctags"
 brew "curl"
-brew "docker"
-brew "ffmpeg"
-brew "getantibody/tap/antibody"
-brew "git"
-brew "gnupg"
-brew "grep"
-brew "highlight"
-brew "htop"
-brew "hub"
-cask "hyper"
+brew "wget"
+brew "tree"
+brew "trash"
 brew "jq"
-brew "lazydocker"
-brew "lazygit"
-brew "markdown"
-brew "mas"
-brew "neofetch"
-brew "neovim"
-brew "nmap"
-brew "postgresql"
 brew "ripgrep"
-brew "ruby-build"
-brew "redis", restart_service: true
+brew "fd"
+brew "bat"
+brew "eza"
+brew "zoxide"
+brew "fzf"
+brew "htop"
+brew "fastfetch"
+brew "grep"
 brew "sed"
-brew "shellcheck"
+brew "gawk"
+brew "git"
+brew "gh"
+brew "git-delta"
+brew "lazygit"
+brew "gnupg"
+brew "nmap"
+brew "zstd"
+brew "xz"
+brew "mas"
+brew "tldr"
+
+# === Development Tools ===
+brew "mise"
+brew "docker"
+brew "lazydocker"
+brew "docker-compose"
+brew "vim"
+brew "neovim"
 brew "terraform"
 brew "terraform-docs"
-brew "tldr"
-brew "tmux"
-brew "trash"
-brew "tree"
-brew "vim"
-brew "wget"
-brew "yarn"
-brew "z"
-brew "zsh"
+brew "awscli"
+brew "shellcheck"
+brew "ctags"
+brew "postgresql@16"
+brew "redis"
+brew "cmake"
+brew "make"
 
-cask "alfred"
-cask "calibre"
-cask "dropbox"
-cask "evernote"
-cask "flux"
-cask "font-consolas-for-powerline"
-cask "font-fira-code"
-cask "font-inconsolata"
-cask "font-inconsolata-for-powerline"
-cask "font-roboto-mono"
-cask "font-roboto-mono-for-powerline"
+# === GUI Applications ===
+cask "ghostty"
+cask "raycast"
 cask "google-chrome"
-cask "karabiner"
-cask "postman"
-cask "sequel-pro"
-cask "skype"
-cask "spectacle"
-cask "spotify"
-cask "the-unarchiver"
 cask "visual-studio-code"
+cask "postman"
+cask "tableplus"
+cask "docker"
+cask "slack"
+cask "zoom"
+cask "spotify"
 cask "vlc"
-cask "windscribe"
-cask "zoomus"
+cask "the-unarchiver"
+cask "karabiner-elements"
+cask "dropbox"
+cask "calibre"
 
-mas '1password 7', id: 1333542190
-mas 'Evernote', id: 406056744
-mas 'Clocky', id: 414554506
-mas 'GarageBand', 682658836
+# === Fonts ===
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-roboto-mono-nerd-font"
+
+# === Mac App Store ===
+mas "1Password 7", id: 1333542190
+mas "Evernote", id: 406056744
