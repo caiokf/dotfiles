@@ -7,8 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [mkdir ~/.zsh ~/.zsh/functions]
-    - [mkdir ~/.aws]
+    - [mkdir -p ~/.zsh ~/.zsh/functions]
 
 - link:
     # Terminal:
@@ -29,15 +28,6 @@
     # Direnv
     ~/development/.envrc: development/envrc
 
-    # Flex-specific config
-    ~/development/flex/.tool-versions: development/flex/asdf-tool-versions
-    ~/development/flex/.envrc: development/flex/envrc
-
-    # AWS Config
-    ~/.aws/config: config/aws_config
-    ~/.aws/credentials: config/aws_credentials
-    ~/.aws/functions: config/aws_functions
-
     # SSH:
     ~/.ssh/config: config/ssh_config
 
@@ -52,10 +42,10 @@
 - shell:
     - [bash ./asdf/install.sh, Setting up asdf]
 
-# Installing dependencies:
-- brewfile:
-    file: Brewfile
-    no-upgrage: true
+# # Installing dependencies:
+# - brewfile:
+#     file: Brewfile
+#     no-upgrage: true
 
 # Setting up vscode:
 - link:
@@ -69,7 +59,3 @@
 
 - shell:
     - [bash ./vscode/install.sh, Installing vscode extensions]
-
-# Cleaning up:
-- shell:
-    - [brew cleanup, Cleaning up]
