@@ -1,13 +1,16 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Shell initialization - sources all shell config files
+# Works for both zsh and bash
 
 SHELL_DIR="$HOME/.config/shell"
 
 source "$SHELL_DIR/exports"
 source "$SHELL_DIR/aliases"
-source "$SHELL_DIR/env_config"
 source "$SHELL_DIR/functions"
 
+# direnv
+command -v direnv >/dev/null && eval "$(direnv hook $SHELL)"
+
 # Local overrides (not in git)
-[[ -f "$HOME/.shell_local" ]] && source "$HOME/.shell_local"
+[ -f "$HOME/.shell_local" ] && source "$HOME/.shell_local"

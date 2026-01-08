@@ -1,9 +1,0 @@
-# Environment tool hooks
-# These are initialized after exports and aliases
-
-# direnv - automatic environment switching
-if command -v direnv &> /dev/null; then
-    eval "$(direnv hook zsh)"
-fi
-
-# mise is initialized in .zshrc (needs to be early for shims)
