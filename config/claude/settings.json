@@ -1,0 +1,10 @@
+{
+  "hooks": {},
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/caiokf/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  }
+}

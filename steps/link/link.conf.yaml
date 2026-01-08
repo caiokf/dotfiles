@@ -6,7 +6,7 @@
 - clean: ['~']
 
 - shell:
-    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/starship ~/.config/mise ~/.config/ghostty ~/development]
+    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/starship ~/.config/mise ~/.config/ghostty ~/.claude ~/development]
 
 - link:
     # Shell (XDG: ~/.config/shell/)
@@ -52,3 +52,10 @@
     ~/Library/Application Support/Cursor/User/keybindings.json:
       path: config/vscode/keybindings.json
       create: true
+
+    # Claude Code
+    ~/.claude/settings.json: config/claude/settings.json
+    ~/.claude/statusline.sh: config/claude/statusline.sh
+    ~/.claude/agents: config/claude/agents
+    ~/.claude/commands: config/claude/commands
+    ~/.claude/skills: config/claude/skills
