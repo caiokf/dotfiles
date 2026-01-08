@@ -1,10 +1,29 @@
-4ops.terraform
+# Core
 christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
 eamodio.gitlens
-EditorConfig.EditorConfig
+editorconfig.editorconfig
+emmanuelbeziat.vscode-great-icons
 esbenp.prettier-vscode
 ms-azuretools.vscode-docker
-ms-python.python
 redhat.vscode-yaml
 shardulm94.trailing-spaces
+tamasfe.even-better-toml
+
+# Infrastructure
+4ops.terraform
+hverlin.mise-vscode
+
+# Languages
+justusadam.language-haskell
+sweetpad.sweetpad
+swiftlang.swift-vscode
+vadimcn.vscode-lldb
+vue.volar
+
+# Themes
+akamud.vscode-theme-onedark
+arcticicestudio.nord-visual-studio-code
+eserozvataf.one-dark-pro-monokai-darker
 teabyii.ayu
+victorlitvinenko.vscode-soft-colors
