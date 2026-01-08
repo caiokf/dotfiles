@@ -1,38 +1,10 @@
-# Load shell configuration
+# Bash profile - minimal fallback for occasional bash use
+
 source ~/.config/shell/init
 
-# Initialize mise (version manager)
-if command -v mise &>/dev/null; then
-    eval "$(mise activate bash)"
-fi
-
-# Initialize Starship prompt
-if command -v starship &>/dev/null; then
-    eval "$(starship init bash)"
-fi
-
-# Source additional files if they exist
-for file in ~/.{path,bash_prompt,aliases,functions,extra}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
+# Tools
+command -v mise >/dev/null && eval "$(mise activate bash)"
+command -v starship >/dev/null && eval "$(starship init bash)"
 
 # Bash options
-shopt -s nocaseglob     # Case-insensitive globbing
-shopt -s histappend     # Append to history file
-shopt -s cdspell        # Autocorrect typos in cd paths
-
-# Enable Bash 4+ features
-for option in autocd globstar; do
-    shopt -s "$option" 2>/dev/null
-done
-
-# Bash completion
-if command -v brew &>/dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
-    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
-elif [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion
-fi
-
-# SSH hostname completion
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
+shopt -s nocaseglob histappend cdspell 2>/dev/null

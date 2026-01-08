@@ -15,10 +15,8 @@
     ~/.config/shell/aliases: config/shell/aliases
     ~/.config/shell/exports: config/shell/exports
     ~/.config/shell/functions: config/shell/functions
-    ~/.config/shell/env_config: config/shell/env_config
     ~/.zshrc: config/shell/zshrc
     ~/.bash_profile: config/shell/bash_profile
-    ~/.bashrc: config/shell/bashrc
     ~/.hushlogin: config/hushlogin
 
     # SSH (XDG: ~/.config/ssh/ - but ~/.ssh is standard)
