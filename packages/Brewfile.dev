@@ -12,9 +12,6 @@ brew "k9s"
 brew "vim"
 brew "neovim"
 
-# Infrastructure
-brew "terraform-docs"
-
 # Code quality
 brew "shellcheck"                  # Shell script linter
 brew "ctags"
