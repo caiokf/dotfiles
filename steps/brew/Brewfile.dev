@@ -6,6 +6,7 @@ brew "direnv"
 # Agents
 brew "beads"
 brew "claude-code"
+brew "coderabbit"
 brew "codex"
 brew "gemini-cli"
 
