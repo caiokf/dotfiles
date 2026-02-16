@@ -3,7 +3,7 @@
   "cSpell.showStatus": false,
   "cSpell.diagnosticLevel": "Hint",
   "debug.allowBreakpointsEverywhere": true,
-  "editor.accessibilitySupport": "off",
+  "editor.accessibilitySupport": "on",
   "editor.codeLens": true,
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
@@ -42,19 +42,24 @@
     "Deliverfile": "ruby",
     "Appfile": "ruby",
     "Matchfile": "ruby",
-    "*.djson": "json"
+    "*.djson": "json",
   },
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "**/.DS_Store": true,
     "**/__pycache__": true,
     "**/.cache": true,
-    "**/.idea": true,
-    "**/.pytest_cache": true,
-    "**/.mypy_cache": true,
-    "**/.venv": true,
     "**/.coverage": true,
-    "**/*.py[co]": true
+    "**/.DS_Store": true,
+    "**/.idea": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.venv": true,
+    "**/*.py[co]": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true,
+    "**/.turbo": true,
+    "**/.nx": true,
   },
   "git.autofetch": false,
   "python.formatting.provider": "none",
@@ -63,7 +68,7 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.env.osx": {
-    "SOBOLE_THEME_MODE": "dark"
+    "SOBOLE_THEME_MODE": "dark",
   },
   "window.clickThroughInactive": false,
   "window.newWindowDimensions": "maximized",
@@ -71,7 +76,7 @@
     "gitDecoration.modifiedResourceForeground": "#d4cb68",
     "activityBar.activeBorder": "#e5b358",
     "editorSuggestWidget.highlightForeground": "#e5b358",
-    "editorSuggestWidget.selectedBackground": "#1c2a42"
+    "editorSuggestWidget.selectedBackground": "#1c2a42",
   },
   "workbench.editor.labelFormat": "short",
   "workbench.startupEditor": "newUntitledFile",
@@ -93,27 +98,27 @@
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[shellscript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "files.eol": "\n"
+    "files.eol": "\n",
   },
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
   "workbench.editor.wrapTabs": false,
-  "workbench.iconTheme": "ayu",
+  "workbench.iconTheme": "vscode-great-icons",
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb",
-    "*.bpmn": "bpmn-io.bpmnEditor"
+    "*.bpmn": "bpmn-io.bpmnEditor",
   },
   "window.zoomLevel": 1,
   "redhat.telemetry.enabled": false,
@@ -127,7 +132,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": "off"
+    "editor.wordBasedSuggestions": "off",
   },
   "dart.openDevTools": "flutter",
   "yaml.customTags": [
@@ -157,20 +162,41 @@
     "!Select",
     "!Select sequence",
     "!Split",
-    "!Split sequence"
+    "!Split sequence",
   ],
   "yaml.validate": false,
   "explorer.compactFolders": false,
   "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
+    "editor.defaultFormatter": "redhat.vscode-xml",
   },
   "accessibility.signals.terminalBell": {
-    "sound": "on"
+    "sound": "on",
   },
   "terminal.integrated.enableVisualBell": true,
   "github.copilot.editor.enableAutoCompletions": true,
   "jestrunner.debugOptions": {},
   "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "node"
-  }
+    "pwa-node": "node",
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, ${capture}.spec.ts, ${capture}.test.ts",
+  },
+  "mise.binPath": "/Users/caiokf/.local/bin/mise",
+  "custom-ui-style.stylesheet": {
+    ".anysphere-markdown-container-root": "font-family: 'Fira Code', monospace !important; font-size: 12px !important;",
+    ".aislash-editor-input": "font-family: 'Fira Code', monospace !important; font-size: 12px !important;",
+    ".markdown-block-code *": "font-family: 'Fira Code', monospace !important; font-size: 12px !important;",
+    ".aichat-code-block-anysphere": "font-family: 'Fira Code', monospace !important; font-size: 12px !important;",
+    ".composer-message-codeblock .monaco-editor": "font-family: 'Fira Code', monospace !important; font-size: 12px !important;",
+  },
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "16147157-74F7-4592-A597-ECA695D37415",
+    },
+  ],
+  "mssql.connections": [],
+  "cursor.composer.shouldChimeAfterChatFinishes": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
 }
