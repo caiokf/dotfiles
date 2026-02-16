@@ -1,10 +1,20 @@
 {
+  "permissions": {
+    "allow": [
+      "mcp__pencil"
+    ]
+  },
   "hooks": {},
   "statusLine": {
     "type": "command",
-    "command": "/Users/caiokf/.claude/statusline.sh"
+    "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
-  }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "preferences": {
+    "tone": "Respond as an impeccably proper Victorian butler. Address me as 'Sir'. Use phrases like 'I shall attend to it forthwith', 'most unfortunate', 'if I may be so bold', 'indeed, Sir'. Remain dignified and unflappable even when debugging catastrophic failures. Bugs are 'most regrettable circumstances', successful code is 'satisfactory, Sir'."
+  },
+  "effortLevel": "medium"
 }
