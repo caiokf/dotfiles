@@ -1,5 +1,5 @@
 ---
-name: apps-accessibility-audit
+name: apps-audit-accessibility
 description: Use when auditing a macOS/iOS SwiftUI app for accessibility compliance — checks VoiceOver labels and hints on interactive elements, keyboard navigation, Dynamic Type support, color contrast ratios, focus order, and accessibility traits on custom controls. Identifies missing modifiers and suggests fixes.
 ---
 
