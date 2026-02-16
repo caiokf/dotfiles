@@ -24,3 +24,5 @@
 # Misc
 .cache/
 tmp/
+
+**/.claude/settings.local.json
