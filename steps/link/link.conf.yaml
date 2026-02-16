@@ -6,7 +6,7 @@
 - clean: ['~']
 
 - shell:
-    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.claude ~/development]
+    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/development]
 
 - link:
     # Shell (XDG: ~/.config/shell/)
@@ -32,6 +32,15 @@
 
     # mise (version manager)
     ~/.config/mise/config.toml: config/mise/config.toml
+
+    # Atuin (shell history)
+    ~/.config/atuin/config.toml: config/atuin/config.toml
+
+    # Jujutsu (jj)
+    ~/.config/jj/config.toml: config/jj/config.toml
+
+    # Zellij (terminal multiplexer)
+    ~/.config/zellij/config.kdl: config/zellij/config.kdl
 
     # Direnv
     ~/development/.envrc: development/envrc
@@ -59,3 +68,19 @@
     ~/.claude/agents: config/claude/agents
     ~/.claude/commands: config/claude/commands
     ~/.claude/skills: config/claude/skills
+
+    # Shared AI agent skills (Agent Skills standard - agentskills.io)
+    # All these tools read SKILL.md files from a skills/ directory
+    ~/.cursor/skills: config/claude/skills
+    ~/.opencode/skills: config/claude/skills
+    ~/.gemini/skills: config/claude/skills
+    ~/.kiro/skills: config/claude/skills
+    ~/.windsurf/skills: config/claude/skills
+    ~/.codeium/windsurf/skills: config/claude/skills
+    ~/.config/amp/skills: config/claude/skills
+
+    # Shared AI agent commands (markdown slash commands)
+    # These tools use the same plain-markdown /command format as Claude Code
+    ~/.cursor/commands: config/claude/commands
+    ~/.opencode/commands: config/claude/commands
+    ~/.windsurf/workflows: config/claude/commands
