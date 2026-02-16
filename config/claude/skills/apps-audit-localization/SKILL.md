@@ -1,5 +1,5 @@
 ---
-name: apps-localization-qa
+name: apps-audit-localization
 description: Use when validating translations and localized layouts in a macOS/iOS app — checks string catalogs for missing translations, identifies truncation risks in compact UI, verifies RTL layout correctness, validates date/number formatting uses locale-aware APIs, and guides pseudo-localization testing.
 ---
 

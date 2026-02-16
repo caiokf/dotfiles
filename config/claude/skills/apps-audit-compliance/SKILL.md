@@ -1,5 +1,5 @@
 ---
-name: apps-compliance-audit
+name: apps-audit-compliance
 description: Use when running pre-submission compliance checks for macOS/iOS apps — merges App Store review readiness and privacy manifest validation, with optional accessibility/localization gates.
 ---
 
@@ -11,8 +11,8 @@ Single audit workflow for App Store readiness. This skill combines policy checks
 
 ## Related Skills
 
-- Optional deep dive: `apps-accessibility-audit`
-- Optional deep dive: `apps-localization-qa`
+- Optional deep dive: `apps-audit-accessibility`
+- Optional deep dive: `apps-audit-localization`
 
 ## When to Use
 
@@ -63,8 +63,8 @@ Required-reason API categories to check:
 ### Phase 5: Optional Quality Gates
 
 If app has broad audience or global rollout:
-- Run `apps-accessibility-audit`
-- Run `apps-localization-qa`
+- Run `apps-audit-accessibility`
+- Run `apps-audit-localization`
 
 ## Output Format
 
