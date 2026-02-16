@@ -1,0 +1,11 @@
+[user]
+name = "Caio Kinzel Filho"
+email = "caiokf@gmail.com"
+
+[ui]
+default-command = "log"
+pager = "delta"
+diff-editor = ":builtin"
+
+[git]
+auto-local-bookmark = true
