@@ -5,6 +5,7 @@ brew "zsh"
 brew "bash"
 brew "starship"                    # Cross-shell prompt
 brew "tmux"
+brew "zellij"                      # Modern tmux alternative with better UX
 brew "atuin"                       # Better shell history with sync
 brew "zsh-autosuggestions"         # Fish-like autosuggestions
 
@@ -19,6 +20,7 @@ brew "ripgrep"                     # Fast grep (rg)
 brew "fd"                          # Fast find alternative
 brew "bat"                         # Better cat with syntax highlighting
 brew "eza"                         # Modern ls replacement (fork of exa)
+brew "yazi"                        # Blazing fast terminal file manager
 brew "zoxide"                      # Smarter cd command
 brew "fzf"                         # Fuzzy finder
 brew "htop"                        # Process viewer

@@ -1,0 +1,117 @@
+// Zellij configuration
+// https://zellij.dev/documentation/configuration
+
+theme "catppuccin-mocha"
+
+// UI preferences
+pane_frames false
+default_layout "compact"
+
+// Copy behavior
+copy_on_select true
+scrollback_editor "/opt/homebrew/bin/nvim"
+
+// Session behavior
+on_force_close "detach"
+session_serialization true
+
+// Mouse support
+mouse_mode true
+
+keybinds {
+    // Add Ctrl+a as tmux-style prefix (keeps all Zellij defaults)
+    normal {
+        bind "Ctrl a" { SwitchToMode "tmux"; }
+    }
+
+    tmux {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "Ctrl a" { Write 1; SwitchToMode "Normal"; }
+
+        // Pane management
+        bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+
+        // Pane navigation
+        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
+        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+
+        // Tab management
+        bind "c" { NewTab; SwitchToMode "Normal"; }
+        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "," { SwitchToMode "RenameTab"; }
+
+        // Tab selection by number
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+
+        // Session management
+        bind "d" { Detach; }
+        bind "w" { SwitchToMode "Session"; }
+
+        // Scroll/Copy mode
+        bind "[" { SwitchToMode "Scroll"; }
+
+        // Resize mode
+        bind "r" { SwitchToMode "Resize"; }
+    }
+
+    resize {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "h" { Resize "Increase Left"; }
+        bind "j" { Resize "Increase Down"; }
+        bind "k" { Resize "Increase Up"; }
+        bind "l" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+    }
+
+    scroll {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "Ctrl d" { HalfPageScrollDown; }
+        bind "Ctrl u" { HalfPageScrollUp; }
+        bind "g" { ScrollToTop; }
+        bind "G" { ScrollToBottom; }
+        bind "/" { SwitchToMode "EnterSearch"; Search "down"; }
+    }
+
+    search {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "n" { Search "down"; }
+        bind "N" { Search "up"; }
+    }
+
+    entersearch {
+        bind "Esc" { SwitchToMode "Scroll"; }
+        bind "Enter" { SwitchToMode "Search"; }
+    }
+
+    renametab {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "Enter" { SwitchToMode "Normal"; }
+    }
+
+    session {
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "d" { Detach; }
+    }
+
+    shared_except "normal" {
+        bind "Enter" { SwitchToMode "Normal"; }
+    }
+}

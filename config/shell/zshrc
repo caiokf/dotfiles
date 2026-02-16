@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/caiokf/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 #!/bin/zsh
 
 # Oh-My-Zsh configuration
@@ -28,6 +35,7 @@ eval "$(zoxide init zsh)"           # Smart cd
 eval "$(mise activate zsh)"         # Version manager
 eval "$(fzf --zsh)"                 # Fuzzy finder keybindings
 eval "$(atuin init zsh)"            # Better shell history with Ctrl+R
+eval "$(starship init zsh)"         # Prompt
 
 # Autosuggestions (ghost text from history)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
