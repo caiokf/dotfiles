@@ -249,6 +249,57 @@ When failures happen, classify first:
 
 Then resolve by replaying the relevant section of this skill and Setapp docs pages in that category.
 
+## Revenue Model and Tier Bands (Pricing Advice)
+
+Use this section when advising on pricing strategy.
+
+### Membership model (Setapp catalog)
+
+- Revenue has two independent components:
+  - `70%` usage-based distribution (weighted by app tier multiplier)
+  - `+20%` partner fee for eligible referred users
+
+Price tiers and multipliers (from Setapp docs):
+
+| Tier | Price range (USD) | Multiplier |
+|---|---|---|
+| 1 | 1.00-1.99 | 1 |
+| 2 | 2.00-3.99 | 2 |
+| 3 | 4.00-5.99 | 3 |
+| 4 | 6.00-7.99 | 4 |
+| 5 | 8.00-11.99 | 5 |
+| 6 | 12.00-15.99 | 7 |
+| 7 | 16.00-21.99 | 10 |
+| 8 | 22.00-27.99 | 13 |
+| 9 | 28.00-33.99 | 15 |
+| 10 | 34.00-43.99 | 20 |
+| 11 | 44.00-53.99 | 24 |
+| 12 | 54.00-65.99 | 30 |
+| 13 | 66.00-77.99 | 35 |
+| 14 | 78.00-93.99 | 43 |
+| 15 | 94.00-125.99 | 57 |
+| 16 | 126.00-173.99 | 79 |
+| 17 | 174.00+ | 100 |
+
+Pricing-strategy implication:
+
+- Boundary jumps can materially change share weight.
+- Example: `1.99` (tier 1, multiplier `1`) vs `2.00` (tier 2, multiplier `2`) means double weight in the 70% usage pool for otherwise equivalent usage.
+- The same boundary logic applies at all tier cutoffs.
+
+Tier assignment guidance:
+
+- Setapp typically uses your external list/subscription price.
+- Annual subscription price is prioritized when both monthly and annual exist.
+- If only monthly exists, docs indicate annualized value (monthly x `12`) is used.
+- Price changes generally need to be effective outside Setapp for about `3 months` before tier updates are accepted.
+
+### Single-app distribution model
+
+- Revenue is generally `85%` of purchase value (purchase-frequency independent).
+- Purchase type (one-time vs subscription cadence) does not change the base `85%` share.
+- FX and transaction fees may affect final payout amount.
+
 ## Mandatory Output Format for This Skill
 
 For every Setapp task, produce:
@@ -267,3 +318,16 @@ For every Setapp task, produce:
 - Do not rely solely on CI for first submission
 - Do not ship untested activation/error paths
 - Do not diverge Setapp release cadence from primary distribution for long periods
+
+## References
+
+- Setapp Marketplace overview: `https://docs.setapp.com/docs/setapp-marketplace-overview`
+- Submitting apps for review: `https://docs.setapp.com/docs/submitting-apps-for-review`
+- Updating apps: `https://docs.setapp.com/docs/updating-applications`
+- Setapp app requirements: `https://docs.setapp.com/docs/preparing-your-application-for-setapp`
+- Monetizing on Setapp: `https://docs.setapp.com/docs/monetizing-on-setapp`
+- Setapp Membership revenue (tiers/multipliers): `https://docs.setapp.com/docs/setapp-membership-revenue`
+- Single-app distribution revenue (85% share): `https://docs.setapp.com/docs/single-app-distribution-revenue`
+- App statistics and payouts: `https://docs.setapp.com/docs/application-statistics`
+- Integration requirements: `https://docs.setapp.com/docs/integration-requirements`
+- Vendor API integration: `https://docs.setapp.com/docs/integrating-apps-using-vendor-api`
