@@ -1,0 +1,95 @@
+{
+  "logoAnimation": "off",
+  "sessionDefaultSettings": {
+    "model": "gpt-5.3-codex",
+    "reasoningEffort": "none",
+    "autonomyMode": "auto-high",
+    "specModeReasoningEffort": "high"
+  },
+  "customModels": [
+    {
+      "model": "claude-opus-4-6",
+      "id": "custom:Claude-Opus-4.6",
+      "index": 0,
+      "baseUrl": "http://localhost:8317",
+      "apiKey": "sk-dummy",
+      "displayName": "Claude Opus 4.6 (Max)",
+      "noImageSupport": false,
+      "provider": "anthropic"
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "id": "custom:Claude-Sonnet-4.6",
+      "index": 1,
+      "baseUrl": "http://localhost:8317",
+      "apiKey": "sk-dummy",
+      "displayName": "Claude Sonnet 4.6 (Max)",
+      "noImageSupport": false,
+      "provider": "anthropic"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "id": "custom:Claude-Haiku-4.5",
+      "index": 2,
+      "baseUrl": "http://localhost:8317",
+      "apiKey": "sk-dummy",
+      "displayName": "Claude Haiku 4.5 (Max)",
+      "noImageSupport": false,
+      "provider": "anthropic"
+    },
+    {
+      "model": "kimi-k2.5",
+      "id": "custom:Kimi-K2.5",
+      "index": 3,
+      "baseUrl": "http://localhost:8317/v1",
+      "apiKey": "sk-dummy",
+      "displayName": "Kimi K2.5",
+      "noImageSupport": false,
+      "provider": "openai"
+    },
+    {
+      "model": "qwen3-coder-plus",
+      "id": "custom:Qwen3-Coder-Plus",
+      "index": 4,
+      "baseUrl": "http://localhost:8317/v1",
+      "apiKey": "sk-dummy",
+      "displayName": "Qwen3 Coder Plus",
+      "noImageSupport": false,
+      "provider": "openai"
+    },
+    {
+      "model": "qwen3-coder-flash",
+      "id": "custom:Qwen3-Coder-Flash",
+      "index": 5,
+      "baseUrl": "http://localhost:8317/v1",
+      "apiKey": "sk-dummy",
+      "displayName": "Qwen3 Coder Flash",
+      "noImageSupport": false,
+      "provider": "openai"
+    },
+    {
+      "model": "vision-model",
+      "id": "custom:Qwen3-Vision-Model",
+      "index": 6,
+      "baseUrl": "http://localhost:8317/v1",
+      "apiKey": "sk-dummy",
+      "displayName": "Qwen3 Vision Model",
+      "noImageSupport": false,
+      "provider": "openai"
+    },
+    {
+      "model": "gpt-5.3-codex",
+      "id": "custom:GPT-5.3-Codex",
+      "index": 7,
+      "baseUrl": "http://localhost:8317/v1",
+      "apiKey": "sk-dummy",
+      "displayName": "GPT 5.3 Codex",
+      "noImageSupport": false,
+      "provider": "openai"
+    }
+  ],
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/caiokf/.factory/statusline.sh"
+  }
+}

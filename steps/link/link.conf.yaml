@@ -3,10 +3,12 @@
       relink: true
       force: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - shell:
-    - [mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/development]
+    - [
+        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/development,
+      ]
 
 - link:
     # Shell (XDG: ~/.config/shell/)
@@ -40,7 +42,7 @@
     ~/.config/jj/config.toml: config/jj/config.toml
 
     # Zellij (terminal multiplexer)
-    ~/.config/zellij/config.kdl: config/zellij/config.kdl
+    ~/.config/zellij: config/zellij
 
     # Direnv
     ~/development/.envrc: development/envrc
@@ -78,6 +80,16 @@
     ~/.windsurf/skills: config/claude/skills
     ~/.codeium/windsurf/skills: config/claude/skills
     ~/.config/amp/skills: config/claude/skills
+
+    # Factory (AI agent platform)
+    ~/.factory/settings.json: config/factory/settings.json
+    ~/.factory/statusline.sh: config/factory/statusline.sh
+    ~/.factory/AGENTS.md: config/factory/AGENTS.md
+    ~/.factory/mcp.json: config/factory/mcp.json
+    ~/.factory/memories.md: config/factory/memories.md
+    ~/.factory/droids: config/factory/droids
+    ~/.factory/hooks: config/factory/hooks
+    ~/.factory/skills: config/factory/skills
 
     # Shared AI agent commands (markdown slash commands)
     # These tools use the same plain-markdown /command format as Claude Code
