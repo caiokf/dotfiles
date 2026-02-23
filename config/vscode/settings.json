@@ -199,4 +199,16 @@
   "mssql.connections": [],
   "cursor.composer.shouldChimeAfterChatFinishes": false,
   "github.copilot.nextEditSuggestions.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "accessibility.signals.chatEditModifiedFile": {
+    "sound": "off",
+  },
+  "accessibility.signals.chatRequestSent": {
+    "sound": "off",
+    "announcement": "off",
+  },
+  "accessibility.signals.chatResponseReceived": {
+    "sound": "off",
+  },
+  "accessibility.signalOptions.volume": 0,
 }

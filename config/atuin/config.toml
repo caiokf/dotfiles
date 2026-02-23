@@ -7,6 +7,6 @@
 #   - "host"      - commands from this machine
 #   - "directory" - commands run in current directory
 #   - "session"   - commands from current shell session
-filter_mode_shell_up_key_binding = "session"
+filter_mode_shell_up_key_binding = "global"
 
 # Tip: Toggle filter interactively with Ctrl+R and press the filter key to cycle through modes
