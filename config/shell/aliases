@@ -8,9 +8,10 @@ alias sudo='sudo '
 # Work directories
 #----------------------------------------------------------
 alias dev="cd ~/development"
-alias dotfiles="cd ~/development/dotfiles && cursor ."
+alias dotfiles="cd ~/development/dotfiles && code ."
 alias plt="cd ~/development/plt"
 alias orange="cd ~/development/orangegigs"
+alias sp="cd ~/development/plt/slicepay/slicepay"
 
 alias m="make"
 alias fl='bundle exec fastlane'
@@ -27,7 +28,6 @@ alias ......="cd ../../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
-alias d="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 

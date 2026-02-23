@@ -56,3 +56,39 @@ function e() {
         direnv allow .
     fi
 }
+
+# Reload shell configuration
+function refresh() {
+    echo "Reloading shell configuration..."
+    source "$HOME/.config/shell/init"
+    # Or, to completely reload the shell:
+    # exec $SHELL -l
+}
+
+#----------------------------------------------------------
+# Zellij
+#----------------------------------------------------------
+zproc() {
+  if zellij action query-tab-names | grep -q "^<processes>$"; then
+    echo "Error: Tab '<processes>' already exists."
+    return 1
+  fi
+  zellij action new-tab --name "<processes>" --layout ~/development/dotfiles/config/zellij/layout-processes.kdl
+
+  # Get the total number of tabs to know how many times to move left
+  local tab_count=$(zellij action query-tab-names | wc -l)
+  for ((i=1; i<tab_count; i++)); do
+    zellij action move-tab left
+  done
+  
+  # Go back to the previously focused tab
+  zellij action go-to-previous-tab
+}
+
+zdev() {
+  if [ -n "$1" ]; then
+    z "$1"
+  fi
+  local dir_name=$(basename "$PWD")
+  zellij action new-tab --name "$dir_name" --layout ~/development/dotfiles/config/zellij/layout-coding.kdl --cwd "$PWD"
+}

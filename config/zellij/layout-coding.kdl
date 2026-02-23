@@ -1,0 +1,53 @@
+layout {
+  pane {
+    size 1
+    borderless true
+    plugin location="tab-bar"
+  }
+
+  pane split_direction="vertical" {
+    pane command="zsh" {
+      args "-c" "droid; exec zsh"
+      start_suspended false
+    }
+
+    pane command="zsh" {
+      args "-c" "droid; exec zsh"
+      start_suspended false
+    }
+
+    pane command="zsh" {
+      args "-c" "droid; exec zsh"
+      start_suspended false
+    }
+
+    pane split_direction="horizontal" {
+      pane command="zsh" {
+        size "55%"
+        focus true
+        start_suspended false
+      }
+
+      pane command="zsh" {
+        size "15%"
+        start_suspended false
+      }
+
+      pane command="zsh" {
+        size "15%"
+        start_suspended false
+      }
+
+      pane command="zsh" {
+        size "15%"
+        start_suspended false
+      }
+    }
+  }
+
+  pane {
+    size 1
+    borderless true
+    plugin location="status-bar"
+  }
+}

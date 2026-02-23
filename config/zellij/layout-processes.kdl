@@ -1,0 +1,21 @@
+layout {
+  pane {
+    size 1
+    borderless true
+    plugin location="tab-bar"
+  }
+
+  pane split_direction="vertical" {
+    pane cwd="/Users/caiokf/development/oss/CLIProxyAPI" command="./cli-proxy-api" {
+      args "--config" "config.yaml"
+    }
+
+    panen cwd="/Users/caiokf/development"
+  }
+
+  pane {
+    size 1
+    borderless true
+    plugin location="status-bar"
+  }
+}
