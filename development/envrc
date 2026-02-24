@@ -1,3 +1,0 @@
-# AWS-Specific Config
-# Load config from ~/.aws/config
-export AWS_SDK_LOAD_CONFIG=true
