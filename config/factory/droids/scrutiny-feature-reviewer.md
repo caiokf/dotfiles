@@ -81,9 +81,9 @@ Look for:
 - **Convention gaps**: Project rules or patterns the worker violated that aren't documented in AGENTS.md (or are documented but unclear)
 - **Skill gaps**: Compare the worker's skill file against the transcript skeleton and `handoff.skillFeedback`. Did the worker follow the procedure? If `skillFeedback.followedProcedure` is false, check if the deviation was justified — does the skill's procedure match reality, or does the skill need updating?
 - **Services/commands gaps**: Did the worker use commands or start services that should be in `.factory/services.yaml` but aren't?
-- **Knowledge gaps**: Did the worker discover codebase knowledge (patterns, quirks, env vars) that should be in `.factory/library/` but wasn't recorded?
+- **Knowledge gaps**: Did the worker discover codebase knowledge (patterns, quirks, env vars) that should be in `.factory/library/` but wasn't recorded? Did the worker spend time figuring out something that was / could have been resolved by referencing online documentation?
 
-Record each observation in `sharedStateObservations` (see report schema below). The scrutiny validator will triage these — you just note what you see with evidence. Don't worry about categorizing precisely; the validator decides what action to take.
+Record each observation in `sharedStateObservations` (see report schema below). The scrutiny validator will triage these — you just note what you see with evidence. Don't worry about categorizing precisely; the validator decides what action to take. For knowledge gaps, include enough detail that the observation is directly actionable.
 
 ## 6) For fix reviews (re-runs)
 
