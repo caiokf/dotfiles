@@ -8,9 +8,6 @@
     "exa": {
       "type": "http",
       "url": "https://mcp.exa.ai/mcp",
-      "headers": {
-        "EXA_API_KEY": "<your-exa-api-key>"
-      },
       "disabled": false
     },
     "notion": {
