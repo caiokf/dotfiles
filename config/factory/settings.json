@@ -1,7 +1,8 @@
 {
+  "includeCoAuthoredByDroid": false,
   "logoAnimation": "off",
   "sessionDefaultSettings": {
-    "model": "gpt-5.3-codex",
+    "model": "custom:Claude-Opus-4.6",
     "reasoningEffort": "none",
     "autonomyMode": "auto-high",
     "specModeReasoningEffort": "high"
