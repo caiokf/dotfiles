@@ -117,10 +117,14 @@ style = "bold cyan"
 
 # AWS
 [aws]
-format = '[$symbol($profile)(\($region\))]($style) '
+format = '[$symbol($profile)]($style) '
 symbol = "☁️ "
 style = "bold yellow"
 disabled = false
+
+[aws.profile_aliases]
+slicepay-staging = "sp-stg"
+slicepay-production = "sp-prod"
 
 # Git metrics (added/deleted lines)
 [git_metrics]
@@ -134,7 +138,7 @@ disabled = false
 format = '[$symbol$context( \($namespace\))]($style) '
 symbol = "⎈ "
 style = "bold blue"
-disabled = false
+disabled = true
 
 # Exit code status
 [status]
