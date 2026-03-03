@@ -7,11 +7,12 @@ add_newline = true
 command_timeout = 1000
 
 # Prompt format - similar to P10k multi-line layout
-format = """
-[╭─](cyan)$username$hostname$directory$git_branch$git_status$git_metrics$git_state
-[╰─](cyan)$status$character"""
+format = """$username$hostname$directory$git_branch$git_status$git_metrics$git_state$fill$kubernetes$nodejs$python$ruby$rust$golang$aws$cmd_duration$time
+$status$character"""
 
-right_format = """$kubernetes$nodejs$python$ruby$rust$golang$aws$cmd_duration$time"""
+# Fill (spacer between left and right)
+[fill]
+symbol = " "
 
 # Character (prompt symbol)
 [character]
@@ -118,7 +119,7 @@ style = "bold cyan"
 # AWS
 [aws]
 format = '[$symbol($profile)]($style) '
-symbol = "☁️ "
+symbol = "🌥️  "
 style = "bold yellow"
 disabled = false
 
