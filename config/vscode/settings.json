@@ -57,9 +57,12 @@
     "**/*.py[co]": true,
     "**/node_modules": true,
     "**/dist": true,
+    "**/.dist": true,
     "**/.git": true,
     "**/.turbo": true,
     "**/.nx": true,
+    "**/.nuxt": true,
+    "**/.output": true,
   },
   "git.autofetch": false,
   "python.formatting.provider": "none",
@@ -211,4 +214,17 @@
     "sound": "off",
   },
   "accessibility.signalOptions.volume": 0,
+  "docker.extension.enableComposeLanguageServer": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true,
+  },
+  "codium.git.showCommitNotification": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
 }
