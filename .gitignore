@@ -13,7 +13,7 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-/development/flex
+/development/envrc
 
 # IDE/Editor specific
 .vscode/
@@ -27,4 +27,7 @@ config/aws_*
 config/ssh/config.local
 
 TODO.md
+
+# Factory prompt log database
+config/factory/prompts.db
 
