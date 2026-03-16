@@ -1,5 +1,5 @@
 ---
-name: apps-release
+name: caiokf:apps-release
 description: Use when shipping a manual macOS release (outside App Store) — end-to-end flow for versioning, changelog, build, sign, notarize, tag, and publish.
 ---
 
