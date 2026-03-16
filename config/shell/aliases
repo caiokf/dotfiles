@@ -15,7 +15,7 @@ alias sp="cd ~/development/plt/slicepay/slicepay"
 
 alias m="make"
 alias fl='bundle exec fastlane'
-alias cc="ENABLE_BACKGROUND_TASKS=1 claude --dangerously-skip-permissions"
+alias da="direnv allow"
 
 #----------------------------------------------------------
 # Navigation
@@ -30,6 +30,13 @@ alias -- -="cd -"
 
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+
+#----------------------------------------------------------
+# LLM-related
+#----------------------------------------------------------
+alias cc="ENABLE_BACKGROUND_TASKS=1 claude --dangerously-skip-permissions"
+alias buc="brew upgrade claude-code"
+alias prompts="harlequin -a sqlite ~/.agents/prompts.db"
 
 #----------------------------------------------------------
 # Modern CLI replacements
