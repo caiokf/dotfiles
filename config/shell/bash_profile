@@ -8,3 +8,5 @@ command -v starship >/dev/null && eval "$(starship init bash)"
 
 # Bash options
 shopt -s nocaseglob histappend cdspell 2>/dev/null
+
+. "$HOME/.local/share/../bin/env"
