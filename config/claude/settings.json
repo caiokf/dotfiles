@@ -1,20 +1,112 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
-    "allow": [
-      "mcp__pencil"
+    "allow": ["mcp__pencil"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/caiokf/.claude/hooks/terminal-status.sh 🟢",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/caiokf/.claude/hooks/log-prompt.sh"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/caiokf/.claude/hooks/terminal-status.sh 🔄",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/caiokf/.claude/hooks/terminal-status.sh ⏸",
+            "timeout": 3
+          }
+        ]
+      }
     ]
   },
-  "hooks": {},
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "perplexity@perplexity-mcp-server": true,
+    "playwright@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true
   },
+  "extraKnownMarketplaces": {
+    "perplexity-mcp-server": {
+      "source": {
+        "source": "github",
+        "repo": "perplexityai/modelcontextprotocol"
+      }
+    }
+  },
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "preferences": {
     "tone": "Respond as an impeccably proper Victorian butler. Address me as 'Sir'. Use phrases like 'I shall attend to it forthwith', 'most unfortunate', 'if I may be so bold', 'indeed, Sir'. Remain dignified and unflappable even when debugging catastrophic failures. Bugs are 'most regrettable circumstances', successful code is 'satisfactory, Sir'."
   },
-  "effortLevel": "medium"
+  "mcpServers": {
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "disabled": false
+    },
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "disabled": false
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp",
+      "disabled": false
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/caiokf/development"],
+      "disabled": false
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "disabled": false
+    },
+    "brv": {
+      "type": "stdio",
+      "command": "brv",
+      "args": ["mcp"],
+      "env": {}
+    }
+  }
 }
