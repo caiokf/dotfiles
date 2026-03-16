@@ -7,29 +7,20 @@ layout {
 
   pane split_direction="vertical" {
     pane command="zsh" {
-      args "-c" "droid; exec zsh"
+      args "-c" "cc; exec zsh"
       start_suspended false
     }
 
     pane command="zsh" {
-      args "-c" "droid; exec zsh"
+      args "-c" "cc; exec zsh"
       start_suspended false
     }
 
-    pane command="zsh" {
-      args "-c" "droid; exec zsh"
-      start_suspended false
-    }
 
     pane split_direction="horizontal" {
       pane command="zsh" {
         size "55%"
         focus true
-        start_suspended false
-      }
-
-      pane command="zsh" {
-        size "15%"
         start_suspended false
       }
 
