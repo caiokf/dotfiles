@@ -92,5 +92,20 @@
   "statusLine": {
     "type": "command",
     "command": "/Users/caiokf/.factory/statusline.sh"
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/caiokf/.factory/hooks/log-prompt.py"
+          }
+        ]
+      }
+    ]
+  },
+  "ideExtensionPromptedAt": {
+    "vscode": 1771905943964
   }
 }
