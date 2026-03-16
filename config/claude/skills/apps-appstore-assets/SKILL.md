@@ -1,5 +1,5 @@
 ---
-name: apps-appstore-assets
+name: caiokf:apps-appstore-assets
 description: Use when preparing App Store Connect marketing assets for macOS/iOS apps — combines metadata strategy (name, subtitle, keywords, description) with screenshot planning, dimensions, framing, and localization.
 ---
 
