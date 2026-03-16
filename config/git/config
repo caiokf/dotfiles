@@ -24,6 +24,12 @@
 	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
+	# Worktrees
+	wt = "!f() { git worktree list --porcelain | awk -v pwd=\"$(pwd)\" 'BEGIN{n=0} /^worktree /{ path=$2 } /^HEAD /{ hash=substr($2,1,7); fh=$2 } /^branch /{ b=$2; sub(/^refs\\/heads\\//,\"\",b); cmd=\"perl -e \\\"use File::Spec; print File::Spec->abs2rel(q(\"path\"), q(\"pwd\"))\\\"\"; cmd|getline rp; close(cmd); cmd=\"git rev-list --count origin/main..\"fh\" 2>/dev/null\"; cmd|getline a; close(cmd); if(a==\"\")a=\"0\"; H[n]=hash; B[n]=b; P[n]=rp; A[n]=a+0; if(length(b)>mb)mb=length(b); if(length(rp)>mp)mp=length(rp); n++ } END{ for(i=0;i<n;i++) printf \"\\033[33m%s \\033[32m%-\"mb\"s \\033[0m%-\"mp\"s \\033[34m+%s\\033[0m\\n\",H[i],B[i],P[i],A[i] }'; }; f"
+
+	# Commit heatmap for last 4 weeks (3 full + current)
+	heatmap = "!git log --after=\"$(perl -MPOSIX -e 'my @n=localtime;my $dow=($n[6]+6)%7;my $t=time-($dow+21)*86400;print strftime(\"%Y-%m-%d\",localtime($t))')\" --format='%ad' --date=format:'%Y-%m-%d' | sort | uniq -c | perl -MPOSIX -e 'my %c;while(<STDIN>){/(\\d+)\\s+(\\S+)/ and $c{$2}=int($1)}my @now=localtime;my $today=timelocal(0,0,12,$now[3],$now[4],$now[5]);my $dow=($now[6]+6)%7;my $start=$today-($dow+21)*86400;my @s=localtime($start);my @e=localtime($start+27*86400);my @mn=qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);if($s[4]==$e[4]){printf\"\\033[1m%s %d\\033[0m\\n\",$mn[$s[4]],$s[5]+1900}else{printf\"\\033[1m%s–%s %d\\033[0m\\n\",$mn[$s[4]],$mn[$e[4]],$e[5]+1900}print\"\\033[90m Mo  Tu  We  Th  Fr  Sa  Su\\033[0m\\n\";for my $w(0..3){for my $d(0..6){my $ts=$start+($w*7+$d)*86400;my @t=localtime($ts);my $key=strftime(\"%Y-%m-%d\",@t);my $n=$c{$key}//0;if($ts>$today){printf\"\\033[90m  ■ \\033[0m\"}elsif($n==0){printf\"\\033[90m  ■ \\033[0m\"}elsif($n<=2){printf\"\\033[32m%3d \\033[0m\",$n}elsif($n<=5){printf\"\\033[92m%3d \\033[0m\",$n}else{printf\"\\033[1;92m%3d \\033[0m\",$n}}print\"\\n\"}' -MTime::Local"
+
 	# Diff
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
@@ -40,6 +46,9 @@
 
 	# Undo last commit (keep changes staged)
 	undo = reset --soft HEAD~1
+
+	# Largest files in repo history (deduplicated, human-readable sizes)
+	big = "!f() { git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | awk '/^blob/{if($3>seen[$4])seen[$4]=$3} END{for(f in seen)print seen[f],f}' | sort -rn | head -20 | awk 'BEGIN{n=0} { s=$1; f=$2; if(s>=1048576){v=s/1048576; u=\"MB\"} else if(s>=1024){v=s/1024; u=\"KB\"} else {v=s; u=\"B\"}; sz=sprintf(\"%.1f %s\",v,u); S[n]=sz; F[n]=f; if(length(sz)>ms)ms=length(sz); n++ } END{ for(i=0;i<n;i++) printf \"\\033[33m%-\"ms\"s \\033[0m%s\\n\",S[i],F[i] }'; }; f"
 
 	# Stash shortcuts
 	sl = stash list
@@ -130,8 +139,10 @@
 [include]
 	path = ~/.config/git/config.local
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[coderabbit]
+	machineId = cli/ba2f9d161a38458eb7c5a3b7c0b069d0
