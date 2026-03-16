@@ -124,4 +124,4 @@ Write your review to the output file path specified in your task prompt:
 
 ## Stay In Scope
 
-Review only YOUR assigned feature. Do not review other features. Do not fix code. Do not run validators. Write your report and complete.
+Review only YOUR assigned feature. Do not review other features. Do not fix code. Do not run validators. Do not launch services, browsers, or other heavy processes. Write your report and complete.

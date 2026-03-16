@@ -127,6 +127,12 @@ For every assertion, you MUST provide the evidence types specified in the valida
 - **Terminal snapshots**: mandatory for CLI flows
 - **Network calls**: mandatory when the assertion involves API requests
 
+## Resource Management
+
+You run in parallel with other flow validator subagents on the same machine. Each tool session (browser, terminal) consumes memory, and multiple subagents creating many sessions can exhaust system resources and crash the host.
+- Use a single tool session (e.g. one `--session` for agent-browser, one `-s` for tuistory) and reuse it across assertions by navigating to new URLs or reloading.
+- Close your tool session before writing the report.
+
 ## Stay In Scope
 
 Test only YOUR assigned assertions. Do not test others. Do not fix code. If you discover issues outside your assertions, note them in your report but do not investigate further.
