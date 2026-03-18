@@ -1,6 +1,5 @@
 ---
-name: caiokf:academic-paper-latex
-description: Use when writing a short (4-6 page) academic/technical paper in LaTeX — guides structure, section balance, page budget, citation style, and Tectonic compilation. Covers introduction, background, methodology, implementation, and conclusions for research papers.
+description: Use when writing a short (4-6 page) academic or technical paper in LaTeX — guides structure, section balance, page budget, citation style, and Tectonic compilation. Triggers on "write a paper", "academic paper", "LaTeX document", "research paper".
 ---
 
 # Academic Paper in LaTeX (Short Format)

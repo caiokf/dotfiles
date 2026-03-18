@@ -1,6 +1,5 @@
 ---
-name: caiokf:tech-eval
-description: Use when evaluating tools, technologies, or approaches for a project decision - guides parallel documentation crawling, synthesis, critical evaluation with real-world research, and honest rewriting based on what actually works in production vs marketing claims
+description: Use when evaluating tools, technologies, or approaches for a project decision — guides parallel documentation crawling, synthesis, and critical evaluation based on what actually works in production vs marketing claims. Triggers on "evaluate", "compare tools", "which should I use", "tech decision", "pick a library".
 ---
 
 # Tech Eval
