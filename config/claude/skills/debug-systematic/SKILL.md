@@ -1,6 +1,5 @@
 ---
-name: caiokf:systematic-debugging
-description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+description: Use when encountering any bug, test failure, or unexpected behavior — applies systematic root-cause analysis with hypothesis tracking before proposing fixes. Must be used BEFORE attempting any fix. Triggers on "debug", "broken", "failing test", "unexpected behavior", "why is this not working".
 ---
 
 # Systematic Debugging
