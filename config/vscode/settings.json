@@ -227,4 +227,17 @@
   "[jsonc]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
   },
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.initialPermissionMode": "bypassPermissions",
+  "claudeCode.useTerminal": true,
+  "claudeCode.claudeProcessWrapper": "cc",
+  "claudeCodeGui.permissions.yoloMode": true,
+  "claudeCodeGui.claude.executable": "cc",
+  "claudeCodeGui.thinking.intensity": "think-harder",
+  "vscode-cc.commandArgs": [
+    "--dangerously-skip-permissions"
+  ],
+  "vscode-cc.environmentVariables": {
+    "ENABLE_BACKGROUND_TASKS": "1"
+  },
 }
