@@ -1,6 +1,5 @@
 ---
-name: caiokf:brainstorm
-description: Use when exploring a problem space and generating solution ideas — designs a custom team of 5+ agents with diverse perspectives (business, technical, user, contrarian, adjacent-field) who brainstorm in parallel, then clusters ideas, runs team critique with oracle evaluation, and outputs ranked recommendations. Triggers on "brainstorm", "ideate", "come up with ideas", "explore solutions", "what are our options".
+description: Use when exploring a problem space and generating solution ideas — designs a custom team of 5+ perspective-driven agents who brainstorm in parallel, clusters ideas by theme, runs team critique with oracle evaluation, and outputs ranked recommendations. Triggers on "brainstorm", "ideate", "come up with ideas", "explore solutions", "what are our options".
 ---
 
 # Brainstorm

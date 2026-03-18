@@ -1,6 +1,5 @@
 ---
-name: caiokf:write-skill
-description: Use when creating new skills, editing existing skills, or verifying skills work before deployment - applies TDD to process documentation by testing with subagents before writing, iterating until bulletproof against rationalization
+description: Use when creating new skills, editing existing skills, or verifying skills work before deployment — applies TDD to process documentation by testing with subagents before writing. Triggers on "create a skill", "new skill", "edit skill", "write a SKILL.md".
 ---
 
 # Writing Skills
