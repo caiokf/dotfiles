@@ -1,5 +1,5 @@
 ---
-name: caiokf:research-deep
+caiokf:research:deep
 description: Use when doing in-depth research on any topic — designs a custom team of 5+ specialized agents with distinct personalities tailored to the research topic, uses exa search and perplexity tools, compiles findings, runs team review with oracle second-opinion, and outputs formatted markdown report with frontmatter. Triggers on "research", "deep dive", "investigate", "comprehensive analysis".
 ---
 
@@ -115,7 +115,7 @@ After all agents return results:
 
 1. Read all findings carefully
 2. Identify **overlapping themes** (consensus) and **contradictions** (disagreement)
-3. Merge into a unified draft following `@references/template.md`
+3. Merge into a unified draft following the template below
 4. **Structure thematically, not by agent** — the reader should never see "the contrarian said X"; weave findings together with disagreements called out explicitly
 5. Fill in all template sections — leave none empty
 6. Note the cross-cutting themes with attribution to which agents surfaced them
@@ -167,7 +167,7 @@ You are the Oracle — a second-opinion reasoning model reviewing a compiled res
 1. Integrate all review feedback — prioritize oracle's meta-analysis and contrarian's critiques
 2. Update confidence levels based on review consensus
 3. Fill the quality score in frontmatter (average of all reviewers' grades)
-4. Format the final report using `@references/template.md` with all frontmatter fields populated
+4. Format the final report using template below with all frontmatter fields populated
 5. **If user specified a save path** → write the file with the `Write` tool
 6. **Otherwise** → display the full report inline
 7. Clean up: `TeamDelete`
@@ -195,3 +195,92 @@ You are the Oracle — a second-opinion reasoning model reviewing a compiled res
 - **Not using both search tools** — Perplexity and exa have different strengths; perplexity_research for depth, exa for breadth/code
 - **Skipping TeamDelete** — Always clean up the team after completion
 - **Empty template sections** — Every section in the template must be filled; if nothing fits, explain why
+
+## Template
+
+```markdown
+---
+title: "Research Report: {TOPIC}"
+date: "{DATE}"
+topic: "{TOPIC}"
+scope: "{SCOPE}"
+quality_score: "{SCORE}/10"
+summary: "{one paragraph at most}"
+tags: []
+---
+
+# {TOPIC}
+
+## Executive Summary
+
+> A 3-5 sentence synthesis of the most important findings, the overall landscape, and the key takeaway. Written for someone who will only read this section.
+
+## Key Findings
+
+- **Finding 1** — One-sentence summary _(Confidence: high/medium/low)_
+- **Finding 2** — One-sentence summary _(Confidence: high/medium/low)_
+- **Finding 3** — One-sentence summary _(Confidence: high/medium/low)_
+- _(continue as needed)_
+
+## {Custom Section Title}
+
+> This section is topic-specific and may be the dominant section of the report. Its title, structure, and subsections should be designed to best serve the research topic. It could be a deep technical analysis, a comparative framework, a market landscape, a historical timeline, a decision matrix — whatever best captures the core substance of the research. Use subsections as needed.
+
+## Detailed Analysis
+
+### {Agent Angle 1 Title}
+
+Thematic analysis from one research perspective. Structure and title adapted to the topic.
+
+### {Agent Angle 2 Title}
+
+_(Continue with one subsection per research angle. Title each thematically — the reader should not see agent role names.)_
+
+## Cross-Cutting Themes
+
+Themes and patterns that emerged across multiple agents' research:
+
+1. **Theme 1** — What it means and why it matters
+2. **Theme 2** — What it means and why it matters
+3. _(continue as needed)_
+
+## Points of Consensus & Disagreement
+
+### Consensus
+- Areas where multiple agents independently reached the same conclusion
+
+### Disagreement
+- Areas where agents had conflicting findings or interpretations, with both sides presented
+
+## Critical Review
+
+> This section reflects the team's collective review of its own compiled findings, including the oracle's meta-analysis.
+
+### Strengths of This Research
+- What the team got right and where confidence is highest
+
+### Gaps & Limitations
+- What's missing, under-explored, or uncertain
+
+### Oracle Assessment
+- Second-opinion meta-analysis of logical consistency, blind spots, and overall quality
+
+## Practical Implications
+
+- **For practitioners** — What to do with these findings
+- **For decision-makers** — Key considerations
+- **For researchers** — Open questions worth pursuing
+
+## Future Directions
+
+1. **Direction 1** — Why it matters and what to explore next
+2. **Direction 2** — Why it matters and what to explore next
+3. _(continue as needed)_
+
+## Sources & References
+
+- [Source](URL) — Brief note on what it contributed
+
+---
+*Research conducted using deep-research skill: custom agent team + oracle review, powered by exa search and perplexity.*
+```
