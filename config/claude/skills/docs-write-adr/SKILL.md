@@ -1,6 +1,5 @@
 ---
-name: caiokf:write-adr
-description: Use when creating or updating Architecture Decision Records (ADRs) - handles both research mode (evaluating options to reach a decision) and documentation mode (recording an already-made decision). Enforces MADR Minimal format with YAML frontmatter and AI-first evaluation criteria.
+description: Use when creating or updating Architecture Decision Records — handles both research mode (evaluating options) and documentation mode (recording decisions). Enforces MADR Minimal format with YAML frontmatter. Triggers on "ADR", "architecture decision", "document a decision", "record why we chose".
 ---
 
 # Writing ADRs
