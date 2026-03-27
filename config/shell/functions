@@ -2,7 +2,7 @@
 
 # Create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$@"
+    mkdir -p "$@" && cd "$@" && zoxide add .
 }
 
 # Syntax-highlight JSON (using jq if available, otherwise python)
