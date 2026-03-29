@@ -7,7 +7,13 @@
 
 - shell:
     - [
-        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/development,
+        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/development ~/Library/Services,
+      ]
+
+- shell:
+    - [
+        'cp -Rf config/macos-quick-actions/*.workflow ~/Library/Services/ && /System/Library/CoreServices/pbs -update',
+        "Installing macOS Quick Actions",
       ]
 
 - link:
