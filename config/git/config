@@ -50,6 +50,9 @@
 	# Largest files in repo history (deduplicated, human-readable sizes)
 	big = "!f() { git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | awk '/^blob/{if($3>seen[$4])seen[$4]=$3} END{for(f in seen)print seen[f],f}' | sort -rn | head -20 | awk 'BEGIN{n=0} { s=$1; f=$2; if(s>=1048576){v=s/1048576; u=\"MB\"} else if(s>=1024){v=s/1024; u=\"KB\"} else {v=s; u=\"B\"}; sz=sprintf(\"%.1f %s\",v,u); S[n]=sz; F[n]=f; if(length(sz)>ms)ms=length(sz); n++ } END{ for(i=0;i<n;i++) printf \"\\033[33m%-\"ms\"s \\033[0m%s\\n\",S[i],F[i] }'; }; f"
 
+	# Clone — bare name defaults to caiokf's GitHub
+	clonee = "!f() { if echo \"$1\" | grep -qvE '[/:]'; then git clone \"gh:caiokf/$1\" \"${@:2}\"; else git clone \"$@\"; fi; }; f"
+
 	# Stash shortcuts
 	sl = stash list
 	sp = stash pop
