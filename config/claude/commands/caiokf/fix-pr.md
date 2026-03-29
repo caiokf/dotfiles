@@ -38,7 +38,7 @@ Follow the Mermaid flowchart above to execute the workflow. Each node type has s
 #### prompt_1773634120047(If the PR actions finished ...)
 
 ```
-If the PR actions finished and there are any code review comments to address, spawn 2 subagents to verify if the issues should be fixed or are irrelevant. Use an `oracle` agent if needed. Fix all issues that are applicable, and then commit to {{branchName}} and push to the PR.
+If the PR actions finished and there are any code review comments to address, spawn 2 subagents to verify if the issues should be fixed or are irrelevant. Use an `oracle` agent if needed. Fix all issues that are applicable ALWAYS replying the comment with the changes you did, and if resolved, mark the original comment as resolved in github/PR, and then commit to {{branchName}} and push to the PR.
 All the non applicable code review comments should be marked as Resolved on the PR and IMPORTANTLY: you should comment as a reply to the specific review comment on why this will not be done.
 ```
 
