@@ -18,6 +18,10 @@ window-padding-x = 10
 window-padding-y = 10
 window-decoration = true
 macos-titlebar-style = tabs
+macos-icon = custom-style
+macos-icon-frame = chrome
+macos-icon-ghost-color = #00FF00
+macos-icon-screen-color = #000000,#003300
 window-theme = ghostty
 
 # Theme - dark minimal
