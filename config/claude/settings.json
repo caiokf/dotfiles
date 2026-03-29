@@ -1,9 +1,13 @@
 {
   "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
   "permissions": {
-    "allow": ["mcp__pencil"]
+    "allow": [
+      "mcp__pencil"
+    ]
   },
   "hooks": {
     "SessionStart": [
@@ -59,7 +63,8 @@
     "ralph-loop@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true
+    "hookify@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "perplexity-mcp-server": {
@@ -93,20 +98,30 @@
     "filesystem": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/caiokf/development"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/caiokf/development"
+      ],
       "disabled": false
     },
     "playwright": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"],
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ],
       "disabled": false
     },
     "brv": {
       "type": "stdio",
       "command": "brv",
-      "args": ["mcp"],
+      "args": [
+        "mcp"
+      ],
       "env": {}
     }
-  }
+  },
+  "model": "opus[1m]"
 }
