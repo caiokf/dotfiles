@@ -7,7 +7,7 @@
 
 - shell:
     - [
-        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/development ~/Library/Services,
+        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/.agents ~/development ~/Library/Services,
       ]
 
 - shell:
@@ -75,6 +75,7 @@
     ~/.claude/statusline.sh: config/claude/statusline.sh
     ~/.claude/agents: config/claude/agents
     ~/.claude/commands: config/claude/commands
+    ~/.claude/hooks: config/claude/hooks
     ~/.claude/skills: config/claude/skills
 
     # Shared AI agent skills (Agent Skills standard - agentskills.io)
