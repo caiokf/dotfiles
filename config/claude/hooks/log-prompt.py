@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import json
 import sqlite3
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = "/Users/caiokf/.agents/prompts.db"
+DB_DIR = "/Users/caiokf/.agents"
+DB_PATH = f"{DB_DIR}/prompts.db"
 SETTINGS_PATH = "/Users/caiokf/.agents/settings.json"
 
 def init_db(conn):
@@ -49,6 +50,7 @@ cwd = input_data.get("cwd", "")
 model = get_model()
 timestamp = datetime.now(timezone.utc).isoformat()
 
+Path(DB_DIR).mkdir(parents=True, exist_ok=True)
 conn = sqlite3.connect(DB_PATH)
 init_db(conn)
 migrate_db(conn)
