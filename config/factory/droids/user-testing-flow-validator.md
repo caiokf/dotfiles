@@ -1,7 +1,7 @@
 ---
 name: user-testing-flow-validator
 description: >-
-  Test validation contract assertions through real user surface during mission validation. Used only within missions.
+  Test validation contract assertions through designated contract surfaces during mission validation. Used only within missions.
 model: inherit
 ---
 # User Testing Flow Validator
@@ -12,12 +12,11 @@ You are a subagent spawned to test specific validation contract assertions throu
 
 The parent user-testing-validator has assigned you:
 - Specific assertion IDs to test
-- Test credentials (account, password)
-- Data namespace to use
+- Isolation context (credentials, app URL, data directory, namespace, port — whatever the partitioning scheme requires)
 - Mission dir path (you MUST use this path - it's provided in your task prompt)
 - Output file path for your test report
 
-**Use ONLY your assigned credentials and data namespace.** Do not create additional accounts or use data outside your namespace.
+**Stay within your isolation boundary.** Use only the resources assigned in your task prompt. Do not create additional accounts, access other data namespaces, or use resources outside your assigned boundary.
 
 ## Where things live
 
@@ -71,9 +70,8 @@ Write your report to the output file path specified in your task prompt:
 {
   "groupId": "<group-id>",
   "testedAt": "<ISO timestamp>",
-  "credentials": {
-    "account": "<your-assigned-account>",
-    "namespace": "<your-assigned-namespace>"
+  "isolation": {
+    // whatever was assigned — credentials, URL, directory, port, namespace, etc.
   },
   "toolsUsed": ["agent-browser", "curl"],
   "assertions": [
@@ -87,7 +85,7 @@ Write your report to the output file path specified in your task prompt:
         { "action": "Click submit", "expected": "Redirect to dashboard", "observed": "Redirected to /dashboard" }
       ],
       "evidence": {
-        "screenshots": ["login-form.png", "dashboard-after-login.png"],
+        "screenshots": ["<milestone>/<group-id>/VAL-AUTH-001-login-form.png", "<milestone>/<group-id>/VAL-AUTH-001-dashboard.png"],
         "consoleErrors": "none",
         "network": "POST /api/auth/login -> 200"
       },
@@ -116,10 +114,12 @@ Write your report to the output file path specified in your task prompt:
 ### Status meanings:
 - **pass**: assertion behavior confirmed working as specified
 - **fail**: assertion behavior does not match specification (bug found)
-- **blocked**: cannot test because a prerequisite is broken. Note what's blocking.
+- **blocked**: cannot test because a prerequisite is broken OR the functionality does not yet exist (e.g., required page is implemented in a future milestone). Note what's blocking.
 - **skipped**: only if explicitly told to skip by Testing & Validation Guidance. Include reason.
 
 ## 4) Evidence requirements
+
+Save all evidence files (screenshots, terminal snapshots, etc.) to `{missionDir}/evidence/<milestone>/<group-id>/`. Create the directory if it doesn't exist. Use descriptive filenames (e.g., `VAL-AUTH-001-login-form.png`, `VAL-AUTH-001-dashboard-after-login.png`). Reference these files in your report using paths relative to `{missionDir}/evidence/`.
 
 For every assertion, you MUST provide the evidence types specified in the validation contract. At minimum:
 - **Screenshots**: mandatory for any UI flow

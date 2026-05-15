@@ -22,7 +22,7 @@ The parent scrutiny-validator has assigned you a specific feature to review. The
 ## Where things live
 
 - **missionDir**: Path provided in your task prompt. Contains `mission.md`, `validation-contract.md`, `AGENTS.md`, `features.json`, `handoffs/`, `worker-transcripts.jsonl`
-- **repo root** (cwd): `.factory/services.yaml`
+- **repo root** (cwd): `.factory/services.yaml`, `.factory/library/` (including `architecture.md` — use this to verify that implementations respect intended component boundaries and data flows)
 
 **IMPORTANT:** Replace `{missionDir}` in all commands below with the actual path from your task prompt.
 
@@ -40,7 +40,7 @@ jq --arg id "$REVIEWED_FEATURE_ID" '
 
 Then gather:
 
-1. **Handoff** (use `completedWorkerSessionId`):
+1. **Handoff** (use the last entry in `workerSessionIds`):
 ```bash
 WORKER_SESSION_ID="..."
 HANDOFF_FILE=$(ls -1 "{missionDir}/handoffs" | rg "$WORKER_SESSION_ID" | sort | tail -n 1)
