@@ -7,7 +7,7 @@
 
 - shell:
     - [
-        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/.agents ~/development ~/Library/Services,
+        mkdir -p ~/.zsh ~/.config/shell ~/.config/git ~/.config/ssh ~/.config/mise ~/.config/ghostty ~/.config/atuin ~/.config/jj ~/.config/zellij ~/.claude ~/.cursor ~/.opencode ~/.gemini ~/.kiro ~/.windsurf ~/.codeium/windsurf ~/.config/amp ~/.factory ~/.agents ~/.pi/agent ~/development ~/Library/Services,
       ]
 
 - shell:
@@ -87,6 +87,9 @@
     ~/.windsurf/skills: config/claude/skills
     ~/.codeium/windsurf/skills: config/claude/skills
     ~/.config/amp/skills: config/claude/skills
+
+    # Pi (coding agent) — only models.json; auth.json stays local (secrets)
+    ~/.pi/agent/models.json: config/pi/models.json
 
     # Factory (AI agent platform)
     ~/.factory/settings.json: config/factory/settings.json
