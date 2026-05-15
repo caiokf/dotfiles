@@ -102,10 +102,72 @@
             "command": "/Users/caiokf/.factory/hooks/log-prompt.py"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SUPERSET_AGENT_ID=droid '/Users/caiokf/.superset/hooks/notify.sh'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SUPERSET_AGENT_ID=droid '/Users/caiokf/.superset/hooks/notify.sh'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SUPERSET_AGENT_ID=droid '/Users/caiokf/.superset/hooks/notify.sh'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SUPERSET_AGENT_ID=droid '/Users/caiokf/.superset/hooks/notify.sh'"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SUPERSET_AGENT_ID=droid '/Users/caiokf/.superset/hooks/notify.sh'"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SUPERSET_AGENT_ID=droid '/Users/caiokf/.superset/hooks/notify.sh'"
+          }
+        ]
       }
     ]
   },
   "ideExtensionPromptedAt": {
     "vscode": 1771905943964
+  },
+  "enabledPlugins": {
+    "core@factory-plugins": true
   }
 }
