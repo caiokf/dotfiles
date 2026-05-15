@@ -149,3 +149,5 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [coderabbit]
 	machineId = cli/ba2f9d161a38458eb7c5a3b7c0b069d0
+[beads]
+	role = maintainer
