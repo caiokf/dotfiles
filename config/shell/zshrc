@@ -34,7 +34,7 @@ ENABLE_CORRECTION="true"
 eval "$(zoxide init zsh)"           # Smart cd
 eval "$(mise activate zsh)"         # Version manager
 eval "$(fzf --zsh)"                 # Fuzzy finder keybindings
-eval "$(atuin init zsh)"            # Better shell history with Ctrl+R
+command -v atuin &>/dev/null && eval "$(atuin init zsh)"  # Better shell history with Ctrl+R
 eval "$(starship init zsh)"         # Prompt
 
 # Autosuggestions (ghost text from history)
@@ -53,3 +53,5 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
