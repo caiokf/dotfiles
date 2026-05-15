@@ -4,21 +4,66 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
+  "model": "claude-opus-4-7[1m]",
   "hooks": {
-    "UserPromptSubmit": [
+    "PermissionRequest": [
       {
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/caiokf/.claude/hooks/log-prompt.py"
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atuin hook claude-code"
           }
         ]
       },
       {
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atuin hook claude-code"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atuin hook claude-code"
           }
         ]
       }
@@ -28,40 +73,45 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
           }
         ]
       }
     ],
-    "PostToolUse": [
+    "UserPromptSubmit": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+            "command": "/Users/caiokf/.claude/hooks/log-prompt.sh"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
           }
         ]
       }
     ],
-    "PostToolUseFailure": [
+    "SessionStart": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
           }
         ]
       }
     ],
-    "PermissionRequest": [
+    "SessionEnd": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
+            "command": "[ -n \"$SUPERSET_HOME_DIR\" ] && [ -x \"$SUPERSET_HOME_DIR/hooks/notify.sh\" ] && SUPERSET_AGENT_ID=claude \"$SUPERSET_HOME_DIR/hooks/notify.sh\" || true"
           }
         ]
       }
@@ -72,14 +122,14 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true,
     "perplexity@perplexity-mcp-server": true,
     "playwright@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "perplexity-mcp-server": {
@@ -92,47 +142,48 @@
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "mcpServers": {
+    "brv": {
+      "args": [
+        "mcp"
+      ],
+      "command": "brv",
+      "env": {},
+      "type": "stdio"
+    },
     "context7": {
+      "disabled": false,
       "type": "http",
-      "url": "https://mcp.context7.com/mcp",
-      "disabled": false
+      "url": "https://mcp.context7.com/mcp"
     },
     "exa": {
+      "disabled": false,
       "type": "http",
-      "url": "https://mcp.exa.ai/mcp",
-      "disabled": false
-    },
-    "notion": {
-      "type": "http",
-      "url": "https://mcp.notion.com/mcp",
-      "disabled": false
+      "url": "https://mcp.exa.ai/mcp"
     },
     "filesystem": {
-      "type": "stdio",
-      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/Users/caiokf/development"
       ],
-      "disabled": false
+      "command": "npx",
+      "disabled": false,
+      "type": "stdio"
+    },
+    "notion": {
+      "disabled": false,
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
     },
     "playwright": {
-      "type": "stdio",
-      "command": "npx",
       "args": [
         "-y",
         "@playwright/mcp@latest"
       ],
-      "disabled": false
-    },
-    "brv": {
-      "type": "stdio",
-      "command": "brv",
-      "args": [
-        "mcp"
-      ],
-      "env": {}
+      "command": "npx",
+      "disabled": false,
+      "type": "stdio"
     }
-  }
+  },
+  "theme": "dark-daltonized"
 }
