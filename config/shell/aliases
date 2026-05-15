@@ -34,7 +34,8 @@ alias dt="cd ~/Desktop"
 #----------------------------------------------------------
 # LLM-related
 #----------------------------------------------------------
-alias cc="CLAUDE_CODE_DISABLE_1M_CONTEXT=1 ENABLE_BACKGROUND_TASKS=1 claude --dangerously-skip-permissions"
+alias cc="ENABLE_BACKGROUND_TASKS=1 claude --dangerously-skip-permissions"
+alias ccr="cc --resume"
 alias buc="brew upgrade claude-code"
 alias prompts="harlequin -a sqlite ~/.agents/prompts.db"
 
@@ -44,11 +45,11 @@ alias prompts="harlequin -a sqlite ~/.agents/prompts.db"
 
 # eza (modern ls replacement)
 if command -v eza &> /dev/null; then
-    alias ls="eza"
-    alias l="eza -l --icons --git"
-    alias la="eza -la --icons --git"
-    alias lt="eza -T --icons --git-ignore"  # tree view
-    alias ll="eza -l --icons --git --sort=modified"
+    alias ls="eza -la --git"
+    alias l="eza -l --git"
+    alias la="eza -la --git"
+    alias lt="eza -T --git-ignore"  # tree view
+    alias ll="eza -l --git --sort=modified"
 else
     # Fallback to standard ls
     alias l="ls -lF"
@@ -93,6 +94,7 @@ command -v hd > /dev/null || alias hd="hexdump -C"
 #----------------------------------------------------------
 # Git shortcuts (supplement oh-my-zsh git plugin)
 #----------------------------------------------------------
+unalias gc
 alias g="git"
 alias gti="git"  # typo fix
 alias gi="git"   # typo fix
