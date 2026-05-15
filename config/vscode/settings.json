@@ -237,5 +237,8 @@
   "vscode-cc.environmentVariables": {
     "ENABLE_BACKGROUND_TASKS": "1"
   },
-  "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme"
+  "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
