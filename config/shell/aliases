@@ -88,6 +88,9 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias c="tr -d '\n' | pbcopy"
 alias reload="exec $SHELL -l"
 
+# Nuke all node_modules folders recursively from current directory
+alias nnm='find . -name node_modules -type d -prune -print -exec rm -rf {} +'
+
 # Canonical hex dump
 command -v hd > /dev/null || alias hd="hexdump -C"
 
