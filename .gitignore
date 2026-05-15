@@ -33,4 +33,6 @@ config/factory/prompts.db
 
 # Project-specific Claude skills (not portable across machines)
 config/claude/skills/plt-poolcut/
+config/claude/skills/platform-email/
+config/claude/skills/service-create/
 
