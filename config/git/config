@@ -151,3 +151,10 @@
 	machineId = cli/ba2f9d161a38458eb7c5a3b7c0b069d0
 [beads]
 	role = maintainer
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential "https://history-in-books-lfs.caiokf.workers.dev"]
+	helper = "!f() { test \"$1\" = get && echo username=git && echo \"password=$(gh auth token)\"; }; f"
