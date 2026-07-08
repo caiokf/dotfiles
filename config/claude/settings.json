@@ -129,7 +129,8 @@
     "ralph-loop@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "lapdog@lapdog": true
   },
   "extraKnownMarketplaces": {
     "perplexity-mcp-server": {
@@ -137,10 +138,17 @@
         "source": "github",
         "repo": "perplexityai/modelcontextprotocol"
       }
+    },
+    "lapdog": {
+      "source": {
+        "source": "github",
+        "repo": "DataDog/dd-apm-test-agent"
+      }
     }
   },
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-daltonized",
   "mcpServers": {
     "brv": {
       "args": [
@@ -184,6 +192,5 @@
       "disabled": false,
       "type": "stdio"
     }
-  },
-  "theme": "dark-daltonized"
+  }
 }
